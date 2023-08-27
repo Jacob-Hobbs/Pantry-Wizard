@@ -1,13 +1,34 @@
 package com.projects.pantrywizard.entity;
 
+import jakarta.persistence.*;
+import org.springframework.stereotype.Component;
 
+@Entity
 public class Ingredient {
 
+    @Id
+    @Column(name="ingredient_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ingredientId;
+
+    @Column(name="name")
     private String ingredientName;
+
+    @Column(name="calories")
+    private int ingredientCalories;
+
+    @Column(name="price")
     private double ingredientPrice;
+
+    @Column(name="imageURL")
     private String imageURL;
+
+    @Column(name="category")
     private String category;
+
+    public Ingredient() {
+        // blank, no-argument constructor required by JPA
+    }
 
     public int getIngredientId() {
         return ingredientId;
@@ -23,6 +44,14 @@ public class Ingredient {
 
     public void setIngredientName(String newIngredientName) {
         this.ingredientName = newIngredientName;
+    }
+
+    public int getIngredientCalories() {
+        return ingredientCalories;
+    }
+
+    public void setIngredientCalories(int ingredientCalories) {
+        this.ingredientCalories = ingredientCalories;
     }
 
     public double getIngredientPrice() {

@@ -1,18 +1,35 @@
 package com.projects.pantrywizard.entity;
 
+import jakarta.persistence.*;
+import org.springframework.stereotype.Component;
+
+@Entity
 public class Recipe {
 
+    @Id
+    @Column(name="recipe_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int recipeId;
 
+    @Column(name="name")
     private String recipeName;
 
+    @Column(name="price")
     private int recipePrice;
 
+    @Column(name="calories")
     private int recipeCalories;
 
+    @Column(name="imageURL")
     private String imageURL;
 
+    @Column(name="category")
     private String recipeCategory;
+
+    public Recipe() {
+        // blank, no-argument constructor required by JPA
+    }
+
 
     public int getRecipeId() {
         return recipeId;
