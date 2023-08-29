@@ -1,7 +1,6 @@
 package com.projects.pantrywizard.entity;
 
 import jakarta.persistence.*;
-import org.springframework.stereotype.Component;
 
 @Entity
 public class Ingredient {
@@ -28,6 +27,15 @@ public class Ingredient {
 
     public Ingredient() {
         // blank, no-argument constructor required by JPA
+    }
+
+    public Ingredient(int ingredientId, String ingredientName, int ingredientCalories, double ingredientPrice, String imageURL, String category) {
+        this.ingredientId = ingredientId;
+        this.ingredientName = ingredientName;
+        this.ingredientCalories = ingredientCalories;
+        this.ingredientPrice = ingredientPrice;
+        this.imageURL = imageURL;
+        this.category = category;
     }
 
     public int getIngredientId() {
@@ -76,5 +84,17 @@ public class Ingredient {
 
     public void setCategory(String newCategory) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "ingredientId=" + ingredientId +
+                ", ingredientName='" + ingredientName + '\'' +
+                ", ingredientCalories=" + ingredientCalories +
+                ", ingredientPrice=" + ingredientPrice +
+                ", imageURL='" + imageURL + '\'' +
+                ", category='" + category + '\'' +
+                '}';
     }
 }

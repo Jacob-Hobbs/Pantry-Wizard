@@ -1,7 +1,9 @@
 package com.projects.pantrywizard.entity;
 
 import jakarta.persistence.*;
-import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Recipe {
@@ -23,6 +25,10 @@ public class Recipe {
     @Column(name="imageURL")
     private String imageURL;
 
+    @Column(name="ingedientList")
+    @OneToMany
+    private List<Ingredient> ingredientList = new ArrayList<>();
+
     @Column(name="category")
     private String recipeCategory;
 
@@ -30,6 +36,14 @@ public class Recipe {
         // blank, no-argument constructor required by JPA
     }
 
+    public Recipe(int recipeId, String recipeName, int recipePrice, int recipeCalories, String imageURL, String recipeCategory) {
+        this.recipeId = recipeId;
+        this.recipeName = recipeName;
+        this.recipePrice = recipePrice;
+        this.recipeCalories = recipeCalories;
+        this.imageURL = imageURL;
+        this.recipeCategory = recipeCategory;
+    }
 
     public int getRecipeId() {
         return recipeId;
@@ -71,11 +85,31 @@ public class Recipe {
         this.imageURL = imageURL;
     }
 
+    public List<Ingredient> getIngredientList() {
+        return ingredientList;
+    }
+
+    public void setIngredientList(List<Ingredient> ingredientList) {
+        this.ingredientList = ingredientList;
+    }
+
     public String getRecipeCategory() {
         return recipeCategory;
     }
 
     public void setRecipeCategory(String recipeCategory) {
         this.recipeCategory = recipeCategory;
+    }
+
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "recipeId=" + recipeId +
+                ", recipeName='" + recipeName + '\'' +
+                ", recipePrice=" + recipePrice +
+                ", recipeCalories=" + recipeCalories +
+                ", imageURL='" + imageURL + '\'' +
+                ", recipeCategory='" + recipeCategory + '\'' +
+                '}';
     }
 }
