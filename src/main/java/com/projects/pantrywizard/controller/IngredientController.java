@@ -2,16 +2,17 @@ package com.projects.pantrywizard.controller;
 
 import com.projects.pantrywizard.entity.Ingredient;
 import jakarta.annotation.PostConstruct;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
-@RequestMapping("/pantrywizard")
+@Controller
+//@RequestMapping("/pantrywizard")
 public class IngredientController {
 
     private List<Ingredient> localIngredientList;
@@ -35,12 +36,22 @@ public class IngredientController {
 
     }
 
-    @GetMapping("/ingredients")
-    public List<Ingredient> sayHello() {
+    //@GetMapping("/ingredients")
+    //public List<Ingredient> sayHello() {
 
         // Jackson converts our list of Ingredients to a JSON array
-        return localIngredientList;
+        //return localIngredientList;
+    //}
+
+    @GetMapping("/ingredients")
+    public String getIngredients(Model model) {
+
+        model.addAttribute("something", null);
+
+        return "index";
     }
+
+
 
     @GetMapping("/ingredients/{ingredientId}")
     public Ingredient getIngredientById(@PathVariable int ingredientId) {

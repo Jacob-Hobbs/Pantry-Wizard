@@ -3,6 +3,7 @@ package com.projects.pantrywizard.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "ingredient")
 public class Ingredient {
 
     @Id
