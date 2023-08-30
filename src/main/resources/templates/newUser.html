@@ -125,12 +125,12 @@
                             <p style="padding-bottom: 10px; text-align: center; color: #eec643;  font-size: 20px;">User Registration Form</p>
                         </div>
                         <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;" >
-                            <label for="inputUsername" style="justify-self: left; padding-bottom: 7px; color: #eec643">Create Username:</label>
+                            <label for="inputUsername" style="justify-self: left; padding-bottom: 7px; color: #eec643"><i class="fas fa-user-pen"></i> | Create Username:</label>
                             <input type="text" class="form-control" id="inputUsername" th:field="*{username}" aria-describedby="emailHelp" placeholder="Username">
 
                         </div>
                         <div class="form-group" style="padding-bottom: 35px; padding-left: 50px; padding-right: 50px;">
-                            <label for="exampleInputPassword1" style="justify-self: left; padding-bottom: 7px; color: #eec643">Create Password:</label>
+                            <label for="exampleInputPassword1" style="justify-self: left; padding-bottom: 7px; color: #eec643"><i class="fas fa-user-lock"></i> | Create Password:</label>
                             <input type="password" class="form-control" id="exampleInputPassword1" th:field="*{password}" placeholder="Password">
                         </div>
 
@@ -140,8 +140,8 @@
                             </a>
                         </div>
                         <div class="form-group" style="padding-bottom: 15px; text-align: center">
-                            <a href="login.html">
-                                <p style="color: #eec643">Cancel</p>
+                            <a href="/login">
+                                <p style="color: #eec643"><i class="fas fa-xmark"></i> | Cancel</p>
                             </a>
                         </div>
 
