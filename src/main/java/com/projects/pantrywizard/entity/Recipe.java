@@ -25,7 +25,7 @@ public class Recipe {
     @Column(name="imageURL")
     private String imageURL;
 
-    @Column(name="ingedientList")
+    @Column(name="ingredientList")
     @OneToMany
     private List<Ingredient> ingredientList = new ArrayList<>();
 
