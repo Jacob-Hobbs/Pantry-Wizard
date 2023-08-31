@@ -126,12 +126,12 @@
             </div>
             <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
               <label for="inputUsername" style="justify-self: left; padding-bottom: 7px; color: #eec643"><i class="fas fa-user"></i> | Username</label>
-              <input type="text" class="form-control" id="inputUsername" aria-describedby="emailHelp" placeholder="Username" th:field="*{username}" >
+              <input type="text" class="form-control" id="inputUsername"  placeholder="Username" th:field="*{username}" aria-describedby="validationUsernameFeedback" required>
 
             </div>
             <div class="form-group" style="padding-bottom: 50px; padding-left: 50px; padding-right: 50px;">
               <label for="exampleInputPassword1" style="justify-self: left; padding-bottom: 7px; color: #eec643"><i class="fas fa-key"></i> | Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" th:field="*{password}" >
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" th:field="*{password}" aria-describedby="validationPasswordFeedback" required>
             </div>
 
             <div class="form-group" style="padding-bottom: 25px; text-align: center">
