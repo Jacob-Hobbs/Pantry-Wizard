@@ -6,6 +6,7 @@ import com.projects.pantrywizard.entity.User;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.PostLoad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,24 +23,15 @@ public class LoginController {
     @Autowired
     private UserRepository userRepository;
 
-
-
-    // loading sample data is NOT working!!
-    @RequestMapping("/login")
+    @PostConstruct
     public void loadSampleData() {
         User defaultAdmin = new User();
         defaultAdmin.setUsername("admin");
-        defaultAdmin.setPassword("admin");
+        defaultAdmin.setPassword("password");
 
         userRepository.save(defaultAdmin);
 
     }
-
-
-
-
-
-
 
     @GetMapping("/login")
     public String login(Model model) {
