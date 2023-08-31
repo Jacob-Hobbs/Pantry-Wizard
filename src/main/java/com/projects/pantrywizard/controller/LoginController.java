@@ -53,15 +53,23 @@ public class LoginController {
 
         Optional<User> userdata = userRepository.findById(userId);
 
+        String returnPage = null;
 
-
-        if (user.getPassword().equals(userdata.get().getPassword())) {
-            return "index";
+        try {
+            if ((user.getPassword().equals(userdata.get().getPassword())) && (user.getUsername().equals(userdata.get().getUsername()))) {
+                returnPage = "index";
+            } else if ((user.getPassword().equals(userdata.get().getPassword())) && (!(user.getUsername().equals(userdata.get().getUsername())))) {
+                returnPage = "loginError";
+            } else if ((!(user.getPassword().equals(userdata.get().getPassword()))) && (user.getUsername().equals(userdata.get().getUsername()))) {
+                returnPage = "loginError";
+            }
+        } catch (Exception e) {
+            System.out.println("Incorrect username or password");
+            returnPage = "loginError";
         }
 
 
-        System.out.println("Incorrect username or password");
-        return "login";
+        return returnPage;
     }
 
 
