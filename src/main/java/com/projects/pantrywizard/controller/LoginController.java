@@ -43,7 +43,7 @@ public class LoginController {
         return "login";
     }
 
-    @PostMapping("/userLogin")
+    @PostMapping("/ingredients/fruit")
     public String loginUser(@ModelAttribute("user") User user) {
 
         System.out.println(user.getUsername());

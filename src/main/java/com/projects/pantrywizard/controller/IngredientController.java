@@ -85,6 +85,64 @@ public class IngredientController {
         return localIngredientList.get(ingredientId);
     }
 
+    @GetMapping("/addIngredient")
+    public String addIngredient(Model model) {
+        model.addAttribute("another", null);
+
+        return "addIngredient";
+    }
+
+    @GetMapping("/ingredients/fruit")
+    public String getFruitIngredients(Model model) {
+        model.addAttribute("another", null);
+
+        return "index";
+    }
+
+    @GetMapping("/ingredients/vegetable")
+    public String getVegetableIngredients(Model model) {
+        model.addAttribute("another", null);
+
+        return "vegetable";
+    }
+
+    @GetMapping("/ingredients/dairy")
+    public String getDairyIngredients(Model model) {
+        model.addAttribute("another", null);
+
+        return "dairy";
+    }
+
+    @GetMapping("/ingredients/protein")
+    public String getProteinIngredients(Model model) {
+        model.addAttribute("another", null);
+
+        return "protein";
+    }
+
+    @GetMapping("/ingredients/grains")
+    public String getGrainsIngredients(Model model) {
+        model.addAttribute("another", null);
+
+        return "grains";
+    }
+
+    @GetMapping("/ingredients/herbs&spices")
+    public String getHerbsAndSpicesIngredients(Model model) {
+        model.addAttribute("another", null);
+
+        return "herbsAndSpices";
+    }
+
+    @GetMapping("/ingredients/other")
+    public String getOtherIngredients(Model model) {
+        model.addAttribute("another", null);
+
+        return "other";
+    }
+
+
+
 
 
 
