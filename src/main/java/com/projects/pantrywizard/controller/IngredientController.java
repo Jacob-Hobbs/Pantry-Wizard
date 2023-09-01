@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -65,8 +66,13 @@ public class IngredientController {
     }
 
     @PostMapping("/addIngredient")
-    public String addIngredient(@ModelAttribute("ingredient") Ingredient theIngredient) {
-        ingredientService.saveIngredient(theIngredient);
+    public String addIngredient(@ModelAttribute("ingredient") Ingredient ingredient) {
+
+
+
+
+
+        ingredientService.saveIngredient(ingredient);
 
         return "index";
     }
@@ -108,7 +114,10 @@ public class IngredientController {
 
     @GetMapping("/addIngredient")
     public String addIngredient(Model model) {
-        model.addAttribute("another", null);
+        Ingredient ingredient = new Ingredient();
+        model.addAttribute("ingredient", ingredient);
+
+
 
         return "addIngredient";
     }
