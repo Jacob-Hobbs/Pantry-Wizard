@@ -1,0 +1,90 @@
+﻿1,Apple,95,1.31,https://static.wikia.nocookie.net/the-snack-encyclopedia/images/7/7d/Apple.png,Fruit
+2,Banana,105,0.63,https://images.heb.com/is/image/HEBGrocery/000377497-1,Fruit
+3,Grapes,62,3.56,https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/blackmonukka.jpg?v=1538780984,Fruit
+4,Pear,101,4.62,https://extension.purdue.edu/foodlink/functions/getImage.php?id=46,Fruit
+5,Orange,45,1.59,https://befreshcorp.net/wp-content/uploads/2017/07/product-packshot-Orange-558x600.jpg,Fruit
+6,Pineapple,50,1.99,https://m.media-amazon.com/images/I/71+qAJehpkL.jpg,Fruit
+7,Watermelon,85,4.99,https://i5.walmartimages.com/seo/Fresh-Personal-Watermelon-Each_14487aaf-d86a-4b46-acaf-7621b90286bb.fb737768267fcdc95c33f355b730ad15.jpeg,Fruit
+8,Lime,20,0.5,https://i5.walmartimages.com/seo/Limes-Each_12314833-2e54-4739-94a2-7db45b63109d.16ff07e3c111df9be4158853c2e505ef.jpeg,Fruit
+9,Cherry,77,8.99,https://media.istockphoto.com/id/533381303/photo/cherry-with-leaves-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=6BV79sui5Hc6lj555eV_ePiGlKfdZveIG9B5hIWidug=,Fruit
+10,Peach,50,1.35,https://billsberryfarm.com/wp-content/uploads/2020/08/peach.png,Fruit
+11,Strawberry,53,3.5,https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg,Fruit
+12,Blackberry,62,4.25,https://www.northernbrewer.com/cdn/shop/products/43407-crystallized-citrus_blackberry_1c0e8c6c-340f-4228-9655-b659d482524c_1024x1024.jpg?v=1610743085,Fruit
+13,Kumquat,13,8.75,https://www.fourwindsgrowers.com/cdn/shop/products/shutterstock_92547181kumquat1_1024x1024.jpg?v=1614965952,Fruit
+14,Coconut,354,3.45,https://i5.walmartimages.com/seo/Coconut-Each_81131765-9311-47ed-ae77-15dddde6b01d.7363231977ed5579d57e0b24cd7c1d9f.png?odnHeight=768&odnWidth=768&odnBg=FFFFFF,Fruit
+15,Kiwi,42,2.35,"https://images.immediate.co.uk/production/volatile/sites/30/2020/02/Kiwi-fruits-582a07b.jpg?quality=90&resize=556,505",Fruit
+16,Blueberry,80,3.6,https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/products/shutterstock_167872100blueberry1.jpg?v=1531795854,Fruit
+17,Broccoli,50,0.75,https://assets.stickpng.com/images/580b57fcd9996e24bc43c1ff.png,Vegetable
+18,Tomato,22,0.5,https://static.vecteezy.com/system/resources/previews/013/442/147/original/tomatoes-on-a-transparent-background-free-png.png,Vegetable
+19,Eggplant,20,2.75,https://freepngimg.com/save/13073-aubergine-png-file/490x490,Vegetable
+20,Carrot,25,2.25,https://www.pngmart.com/files/8/Carrot-Transparent-Background.png,Vegetable
+21,Onion,44,1.25,https://clipart-library.com/image_gallery2/Onion-PNG-File.png,Vegetable
+22,Turnip,33,0.28,https://www.pngmart.com/files/22/Turnip-PNG.png,Vegetable
+23,Asparagus,30,3.99,https://assets.stickpng.com/images/59bf7ed37a216d0b052f12cf.png,Vegetable
+24,Squash,35,0.85,https://www.pngmart.com/files/22/Turnip-PNG.png,Vegetable
+25,Potato,85,1.25,https://www.pngmart.com/files/3/Potato-PNG-Clipart.png,Vegetable
+26,2% Milk,103,4.26,https://www.pngitem.com/pimgs/m/137-1375423_transparent-milk-carton-png-small-chocolate-milk-carton.png,Dairy
+27,Cheddar Cheese,113,5.99,https://stordfkenticomedia.blob.core.windows.net/df-us/lolfs/media/lol-fs-products/00034500440066-600x600.png,Dairy
+28,Swiss Cheese,106,3.56,https://png.monster/wp-content/uploads/2022/06/png.monster-811.png,Dairy
+29,Butter,120,2.64,https://purepng.com/public/uploads/large/purepng.com-butterfood-dairy-milk-butter-buttermilk-cream-butterfat-941524621398zsmge.png,Dairy
+30,Yogurt,59,6.49,https://www.pngitem.com/pimgs/m/200-2006964_transparent-yogurt-png-imagenes-de-yogurt-png-png.png,Dairy
+31,Chuck Roast,251,19.99,https://pngimg.com/d/beef_PNG5.png,Protein
+32,Whole Turkey,54,38.85,https://www.pngmart.com/files/22/Thanksgiving-Turkey-Meat-Download-PNG-Image.png,Protein
+33,Lamb,250,13.5,https://www.nicepng.com/png/detail/235-2353318_fresh-choice-lamb-lamb-meat-png.png,Protein
+34,Canned Tuna,120,1.5,https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00080000006745/2b0bbddf879114a9052380463b4d35b2_large.png&width=512&type=webp&quality=90,Protein
+35,Eggs,78,4.24,https://i.pinimg.com/736x/a0/27/8c/a0278cf4f6265b609583e8a3b19d8292.jpg,Protein
+36,Prawn,99,9.85,https://www.pngitem.com/pimgs/m/15-153169_red-cooked-prawn-or-tiger-shrimp-isolated-t.png,Protein
+37,Red Snapper,170,27.5,https://thumbs.dreamstime.com/b/red-snapper-fish-northern-lutjanus-campechanus-isolated-white-studio-background-58216590.jpg,Protein
+38,Veal,146,4.25,https://i.pinimg.com/originals/69/af/7e/69af7e1e83d8fa1f5dcc7f16a8e93c19.png,Protein
+39,Sirloin,207,13.5,https://images.squarespace-cdn.com/content/v1/5dddd019b30945256dc7d145/1574951547776-AIU046VQAKD9IN0S8V38/Top-Sirloin-Steak_2.png?format=2500w,Protein
+40,Pork Chop,505,4.23,https://www.nicepng.com/png/detail/342-3422238_pork-chops-3-grams-of-pork.png,Protein
+41,Salmon,208,5.83,https://simg.nicepng.com/png/small/71-715083_arnarlax-dynamic-conditions-high-vector-library-stock-north.png,Protein
+42,Octopus,139,10.99,https://pngimg.com/uploads/octopus/octopus_PNG1.png,Protein
+43,Scallop,137,15.95,https://png.pngtree.com/png-vector/20210924/ourlarge/pngtree-scallop-shell-png-image_3944866.jpg,Protein
+44,Blue Crab,112,19.49,https://www.nicepng.com/png/detail/16-163077_crab-png-picture-red-crab-png.png,Protein
+45,Oyster,175,12.35,https://www.pngmart.com/files/22/Pacific-Oyster-PNG-HD.png,Protein
+46,Flour,455,0.52,https://www.freepnglogos.com/uploads/flour-png/flour-png-image-png-arts-1.png,Grains
+47,White Rice,206,1.35,https://assets.stickpng.com/images/5bbc97440bc67a02c98d959a.png,Grains
+48,Brown Rice,216,1.75,https://assets.stickpng.com/images/5bbc96ec0bc67a02c98d9591.png,Grains
+49,Rotini Pasta,200,3.12,https://static.vecteezy.com/system/resources/previews/025/065/181/original/rotini-with-ai-generated-free-png.png,Grains
+50,Bread,79,1.26,https://clipart-library.com/images_k/loaf-of-bread-transparent/loaf-of-bread-transparent-6.png,Grains
+51,Farfalle Pasta,200,3.47,https://freepngdesign.com/content/uploads/images/bow-tie-pasta-1811.png,Grains
+52,Flour Tortilla,147,2.91,https://www.nicepng.com/png/detail/985-9851773_tortilla-wrap.png,Grains
+53,Granola,132,4.26,https://www.pngmart.com/files/5/Granola-PNG-File.png,Grains
+54,Quinoa,222,3.5,https://static.toiimg.com/photo/101411093.cms,Grains
+55,Bay Leaf,0,0.13,https://www.pngmart.com/files/22/Bay-leaves-PNG.png,Herbs & Spices
+56,Cinnamon,0,0.75,https://t3.ftcdn.net/jpg/02/16/68/04/360_F_216680422_S9VYItUjeBSDN46nitMwGzy8ncYefK2x.jpg,Herbs & Spices
+57,Anise Star,0,0.35,https://www.southernstylespices.com/wp-content/uploads/2019/07/Star-Anise-bowl.png,Herbs & Spices
+58,Chilli Powder,0,0.08,https://t3.ftcdn.net/jpg/04/97/28/14/360_F_497281462_kjjtJQhZC4VmbJwbghBPlYKDLxGayIsz.jpg,Herbs & Spices
+59,Basil,0,0.12,https://img.freepik.com/premium-photo/close-up-bunch-basil-leaves-isolated_183352-2.jpg,Herbs & Spices
+60,Cumin,0,0.24,https://goldenriseagri.com/wp-content/uploads/2022/09/cumin-png.png,Herbs & Spices
+61,Himalayan Sea Salt,0,1.29,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJh-yo9AYBQ7R6QM4JZp2RL_bcxhy5OuV-UQ&usqp=CAU,Herbs & Spices
+62,Sage,0,0.45,https://www.nicepng.com/png/detail/818-8187005_sage-png.png,Herbs & Spices
+63,Black Pepper,0,0.02,https://pngimg.com/d/black_pepper_PNG16.png,Herbs & Spices
+64,Thyme,0,0.45,https://www.pngplay.com/wp-content/uploads/15/Thyme-Transparent-Free-PNG.png,Herbs & Spices
+65,Honey,64,2.96,https://freepngimg.com/thumb/categories/973.png,Other
+66,Olive Oil,120,6.48,https://static.vecteezy.com/system/resources/previews/024/190/821/original/a-bowl-of-olive-oil-olive-tree-branch-leaves-and-fruits-lives-a-bowl-of-green-olives-vegetarian-organic-food-watercolor-hand-drawn-illustration-isolated-for-menu-packaging-design-png.png,Other
+67,Morel Mushroom,31,35.49,https://lirp.cdn-website.com/aada6476/dms3rep/multi/opt/Morielje+Morchel+Morel+Morille+Morchella+conica2-640w.png,Other
+68,Molasses,58,0.92,https://media.istockphoto.com/id/534198045/photo/dish-of-molasses.jpg?s=612x612&w=0&k=20&c=VuOH4637d7moW7vEj5H-0jvkGtTo1vD-KK7jJGvt0GQ=,Other
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
