@@ -2,13 +2,12 @@ package com.projects.pantrywizard.controller;
 
 import com.projects.pantrywizard.dao.IngredientRepository;
 import com.projects.pantrywizard.entity.Ingredient;
+import com.projects.pantrywizard.service.IngredientService;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -22,6 +21,9 @@ public class IngredientController {
 
     @Autowired
     private IngredientRepository ingredientRepository;
+
+    @Autowired
+    private IngredientService ingredientService;
 
     private List<Ingredient> localIngredientList;
 
@@ -61,6 +63,25 @@ public class IngredientController {
         ingredientRepository.saveAll(localIngredientList);
 
     }
+
+    @PostMapping("/addIngredient")
+    public String addIngredient(@ModelAttribute("ingredient") Ingredient theIngredient) {
+        ingredientService.saveIngredient(theIngredient);
+
+        return "index";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     //@GetMapping("/ingredients")
     //public List<Ingredient> sayHello() {

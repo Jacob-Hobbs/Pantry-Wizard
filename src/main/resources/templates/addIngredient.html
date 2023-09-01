@@ -192,15 +192,24 @@
                                 Ingredient Category
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" >Fruit</a></li>
-                                <li><a class="dropdown-item">Vegetable</a></li>
-                                <li><a class="dropdown-item">Dairy</a></li>
-                                <li><a class="dropdown-item">Protein</a></li>
-                                <li><a class="dropdown-item">Grains</a></li>
-                                <li><a class="dropdown-item">Herbs & Spices</a></li>
-                                <li><a class="dropdown-item">Other</a></li>
+                                <li><a class="dropdown-item" type="button" onclick="showCategory(this)">Fruit</a></li>
+                                <li><a class="dropdown-item" type="button" onclick="showCategory(this)">Vegetable</a></li>
+                                <li><a class="dropdown-item" type="button" onclick="showCategory(this)">Dairy</a></li>
+                                <li><a class="dropdown-item" type="button" onclick="showCategory(this)">Protein</a></li>
+                                <li><a class="dropdown-item" type="button" onclick="showCategory(this)">Grains</a></li>
+                                <li><a class="dropdown-item" type="button" onclick="showCategory(this)">Herbs & Spices</a></li>
+                                <li><a class="dropdown-item" type="button" onclick="showCategory(this)">Other</a></li>
                             </ul>
                         </div>
+
+                        <script>
+                            function showCategory(item) {
+                                document.getElementById("dropdownMenuButton").innerHTML = item.innerHTML;
+                            }
+                        </script>
+
+
+
                         <div class="form-group" style="padding-bottom: 15px; text-align: center">
                             <a href="index.html">
                                 <button type="submit" class="btn btn-primary" >Submit</button>
