@@ -162,140 +162,28 @@
 
 
 
-    <div class="container-fluid border, text-center" style="background-color: #F2F4FF">
+    <div class="container-fluid border, text-center" style="background-color: #F2F4FF;" >
 
 
         <div class="row" style="padding: 30px;">
-            <div class="col-md-1">
 
-            </div>
 
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngmart.com/files/22/Bay-leaves-PNG.png"
-                         style="max-height: 200px; max-width: 200px;"
+            <div class="col-md-2 mb-5" th:each="herbOrSpice, rowStat : ${herbsAndSpices}">
 
-                         class="card-img-top" alt="Fissure in Sandstone" />
-                    <div class="card-body">
-                        <h6 class="card-title">Bay Leaf</h6>
+                <a th:href="@{/updateIngredient(ingredient_id=${herbOrSpice.ingredient_id})}">
+                    <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
+                        <img th:src="${herbOrSpice.imageURL}"
+                             style="max-height: 200px; max-width: 200px;"
+
+                             class="card-img-top" alt="Ingredient Image" />
+                        <div class="card-body">
+                            <h6 class="card-title" th:text="${herbOrSpice.name}">Apple</h6>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://t3.ftcdn.net/jpg/02/16/68/04/360_F_216680422_S9VYItUjeBSDN46nitMwGzy8ncYefK2x.jpg"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Cinnamon</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.southernstylespices.com/wp-content/uploads/2019/07/Star-Anise-bowl.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Anise Star</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://t3.ftcdn.net/jpg/04/97/28/14/360_F_497281462_kjjtJQhZC4VmbJwbghBPlYKDLxGayIsz.jpg"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Chilli Powder</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://img.freepik.com/premium-photo/close-up-bunch-basil-leaves-isolated_183352-2.jpg"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Basil</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
+                </a>
 
             </div>
         </div>
-
-
-        <div class="row" style="padding: 30px">
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://goldenriseagri.com/wp-content/uploads/2022/09/cumin-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Cumin</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJh-yo9AYBQ7R6QM4JZp2RL_bcxhy5OuV-UQ&usqp=CAU"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Himalayan Sea Salt</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.nicepng.com/png/detail/818-8187005_sage-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Sage</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://pngimg.com/d/black_pepper_PNG16.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Black Pepper</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngplay.com/wp-content/uploads/15/Thyme-Transparent-Free-PNG.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Thyme</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-
-            </div>
-        </div>
-
-
-
-
     </div></div>
 
 

@@ -162,131 +162,28 @@
 
 
 
-    <div class="container-fluid border, text-center" style="background-color: #F2F4FF">
+    <div class="container-fluid border, text-center" style="background-color: #F2F4FF;" >
 
 
         <div class="row" style="padding: 30px;">
-            <div class="col-md-1">
 
-            </div>
 
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.freepnglogos.com/uploads/flour-png/flour-png-image-png-arts-1.png"
-                         style="max-height: 200px; max-width: 200px;"
+            <div class="col-md-2 mb-5" th:each="grain, rowStat : ${grains}">
 
-                         class="card-img-top" alt="Fissure in Sandstone" />
-                    <div class="card-body">
-                        <h6 class="card-title">Flour</h6>
+                <a th:href="@{/updateIngredient(ingredient_id=${grain.ingredient_id})}">
+                    <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
+                        <img th:src="${grain.imageURL}"
+                             style="max-height: 200px; max-width: 200px;"
+
+                             class="card-img-top" alt="Ingredient Image" />
+                        <div class="card-body">
+                            <h6 class="card-title" th:text="${grain.name}">Apple</h6>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://assets.stickpng.com/images/5bbc97440bc67a02c98d959a.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >White Rice</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://assets.stickpng.com/images/5bbc96ec0bc67a02c98d9591.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Brown Rice</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://static.vecteezy.com/system/resources/previews/025/065/181/original/rotini-with-ai-generated-free-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Rotini Pasta</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://clipart-library.com/images_k/loaf-of-bread-transparent/loaf-of-bread-transparent-6.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Bread</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
+                </a>
 
             </div>
         </div>
-
-
-        <div class="row" style="padding: 30px">
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://freepngdesign.com/content/uploads/images/bow-tie-pasta-1811.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Farfalle Pasta</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.nicepng.com/png/detail/985-9851773_tortilla-wrap.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Flour Tortilla</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngmart.com/files/5/Granola-PNG-File.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Granola</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://static.toiimg.com/photo/101411093.cms"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Quinoa</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-1">
-
-            </div>
-        </div>
-
-
-
-
     </div></div>
 
 

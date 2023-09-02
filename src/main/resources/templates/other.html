@@ -162,71 +162,28 @@
 
 
 
-    <div class="container-fluid border, text-center" style="background-color: #F2F4FF">
+    <div class="container-fluid border, text-center" style="background-color: #F2F4FF;" >
 
 
         <div class="row" style="padding: 30px;">
-            <div class="col-md-1">
 
-            </div>
 
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://freepngimg.com/thumb/categories/973.png"
-                         style="max-height: 200px; max-width: 200px;"
+            <div class="col-md-2 mb-5" th:each="other, rowStat : ${others}">
 
-                         class="card-img-top" alt="Fissure in Sandstone" />
-                    <div class="card-body">
-                        <h6 class="card-title">Honey</h6>
+                <a th:href="@{/updateIngredient(ingredient_id=${other.ingredient_id})}">
+                    <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
+                        <img th:src="${other.imageURL}"
+                             style="max-height: 200px; max-width: 200px;"
+
+                             class="card-img-top" alt="Ingredient Image" />
+                        <div class="card-body">
+                            <h6 class="card-title" th:text="${other.name}">Apple</h6>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://static.vecteezy.com/system/resources/previews/024/190/821/original/a-bowl-of-olive-oil-olive-tree-branch-leaves-and-fruits-lives-a-bowl-of-green-olives-vegetarian-organic-food-watercolor-hand-drawn-illustration-isolated-for-menu-packaging-design-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Olive Oil</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://lirp.cdn-website.com/aada6476/dms3rep/multi/opt/Morielje+Morchel+Morel+Morille+Morchella+conica2-640w.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Morel Mushroom</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://media.istockphoto.com/id/534198045/photo/dish-of-molasses.jpg?s=612x612&w=0&k=20&c=VuOH4637d7moW7vEj5H-0jvkGtTo1vD-KK7jJGvt0GQ="
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Molasses</h6>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
+                </a>
 
             </div>
         </div>
-
-
-
-
     </div></div>
 
 

@@ -162,200 +162,28 @@
 
 
 
-    <div class="container-fluid border, text-center" style="background-color: #F2F4FF">
+    <div class="container-fluid border, text-center" style="background-color: #F2F4FF;" >
 
 
         <div class="row" style="padding: 30px;">
-            <div class="col-md-1">
 
-            </div>
 
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://pngimg.com/d/beef_PNG5.png"
-                         style="max-height: 200px; max-width: 200px;"
+            <div class="col-md-2 mb-5" th:each="protein, rowStat : ${proteins}">
 
-                         class="card-img-top" alt="Fissure in Sandstone" />
-                    <div class="card-body">
-                        <h6 class="card-title">Chuck Roast</h6>
+                <a th:href="@{/updateIngredient(ingredient_id=${protein.ingredient_id})}">
+                    <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
+                        <img th:src="${protein.imageURL}"
+                             style="max-height: 200px; max-width: 200px;"
+
+                             class="card-img-top" alt="Ingredient Image" />
+                        <div class="card-body">
+                            <h6 class="card-title" th:text="${protein.name}">Apple</h6>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngmart.com/files/22/Thanksgiving-Turkey-Meat-Download-PNG-Image.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Whole Turkey</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.nicepng.com/png/detail/235-2353318_fresh-choice-lamb-lamb-meat-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Lamb</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00080000006745/2b0bbddf879114a9052380463b4d35b2_large.png&width=512&type=webp&quality=90"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Canned Tuna</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://i.pinimg.com/736x/a0/27/8c/a0278cf4f6265b609583e8a3b19d8292.jpg"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Eggs</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
+                </a>
 
             </div>
         </div>
-
-
-        <div class="row" style="padding: 30px">
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngitem.com/pimgs/m/15-153169_red-cooked-prawn-or-tiger-shrimp-isolated-t.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Prawn</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://thumbs.dreamstime.com/b/red-snapper-fish-northern-lutjanus-campechanus-isolated-white-studio-background-58216590.jpg"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Red Snapper</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://i.pinimg.com/originals/69/af/7e/69af7e1e83d8fa1f5dcc7f16a8e93c19.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Veal</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://images.squarespace-cdn.com/content/v1/5dddd019b30945256dc7d145/1574951547776-AIU046VQAKD9IN0S8V38/Top-Sirloin-Steak_2.png?format=2500w"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Sirloin</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.nicepng.com/png/detail/342-3422238_pork-chops-3-grams-of-pork.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Pork Chop</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-
-            </div>
-        </div>
-
-
-        <div class="row" style="padding: 30px">
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://simg.nicepng.com/png/small/71-715083_arnarlax-dynamic-conditions-high-vector-library-stock-north.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Salmon</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://pngimg.com/uploads/octopus/octopus_PNG1.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Octopus</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://png.pngtree.com/png-vector/20210924/ourlarge/pngtree-scallop-shell-png-image_3944866.jpg"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Scallop</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.nicepng.com/png/detail/16-163077_crab-png-picture-red-crab-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Blue Crab</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngmart.com/files/22/Pacific-Oyster-PNG-HD.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Oyster</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-
-            </div>
-
-        </div>
-
-
-
     </div></div>
 
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class IngredientServiceImpl implements IngredientService {
@@ -23,4 +24,21 @@ public class IngredientServiceImpl implements IngredientService {
 
         return ingredientRepository.findByCategory(category);
     }
+
+    @Override
+    public Optional<Ingredient> getIngredientById(Integer ingredient_id) {
+        return ingredientRepository.findById(ingredient_id);
+    }
+
+    @Override
+    public void updateIngredient(Ingredient updatedIngredient) {
+        ingredientRepository.save(updatedIngredient);
+    }
+
+    @Override
+    public void delete(Ingredient ingredient) {
+        ingredientRepository.delete(ingredient);
+    }
+
+
 }

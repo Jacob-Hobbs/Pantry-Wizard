@@ -4,6 +4,7 @@ import com.projects.pantrywizard.dao.IngredientRepository;
 import com.projects.pantrywizard.entity.Ingredient;
 import com.projects.pantrywizard.service.IngredientService;
 import jakarta.annotation.PostConstruct;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 @Controller
 @RequestMapping("/")
@@ -69,13 +67,15 @@ public class IngredientController {
     public String addIngredient(@ModelAttribute("ingredient") Ingredient ingredient) {
 
 
-
-
-
         ingredientService.saveIngredient(ingredient);
 
-        // use "Post/Redirect/Get" (PRG) pattern to prevent data duplication.
-        return "redirect:/ingredients/fruit";
+        String category = ingredient.getCategory().toLowerCase();
+
+        if (category.equals("herbs & spices")) {
+            category = "herbs&spices";
+        }
+
+        return "redirect:/ingredients/" + category;
     }
 
 
@@ -123,13 +123,58 @@ public class IngredientController {
         return "addIngredient";
     }
 
+    @GetMapping("/updateIngredient")
+    public String updateIngredientPage(@RequestParam("ingredient_id") Integer ingredient_id, Model model) {
+
+
+        Optional<Ingredient> ingredient = ingredientService.getIngredientById(ingredient_id);
+
+        if (ingredient.isPresent()) {
+            Ingredient ingredientEntity = ingredient.get();
+            model.addAttribute("ingredient", ingredientEntity);
+        }
+
+        return "updateIngredient";
+    }
+
+    @PostMapping("/updateIngredient")
+    public String updateIngredient(@ModelAttribute("ingredient") Ingredient updatedIngredient) {
+        ingredientService.updateIngredient(updatedIngredient);
+
+        String category = updatedIngredient.getCategory().toLowerCase();
+
+        if (category.equals("herbs & spices")) {
+            category = "herbs&spices";
+        }
+
+        return "redirect:/ingredients/" + category;
+    }
+
+    @PostMapping("/deleteIngredient")
+    public String deleteIngredient(@ModelAttribute("ingredient") Ingredient ingredient) {
+
+        Optional<Ingredient> existingIngredient = ingredientService.getIngredientById(ingredient.getIngredient_id());
+
+        if (existingIngredient.isPresent()) {
+            ingredientService.delete(existingIngredient.get());
+            return "redirect:/ingredients/fruit";
+        } else {
+            System.out.println("Ingredient not found!!");
+        }
+        return "redirect:/ingredients/fruit";
+    }
+
+
+
+
+
+
     @GetMapping("/ingredients/fruit")
     public String getFruitIngredients(Model model) {
 
         model.addAttribute("another", null);
 
         List<Ingredient> fruits = ingredientService.getIngredientsByCategory("Fruit");
-
 
         for (Ingredient fruit: fruits) {
             if (!(fruit.getImageURL().contains("https://"))) {
@@ -138,12 +183,9 @@ public class IngredientController {
             }
         }
 
-
         model.addAttribute("fruits", fruits);
         return "fruit";
     }
-
-
 
 
     @GetMapping("/ingredients/vegetable")
@@ -151,8 +193,15 @@ public class IngredientController {
         model.addAttribute("another", null);
 
         List<Ingredient> vegetables = ingredientService.getIngredientsByCategory("Vegetable");
-        model.addAttribute("vegetables", vegetables);
 
+        for (Ingredient vegetable: vegetables) {
+            if (!(vegetable.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                vegetable.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("vegetables", vegetables);
         return "vegetable";
     }
 
@@ -161,8 +210,15 @@ public class IngredientController {
         model.addAttribute("another", null);
 
         List<Ingredient> dairys = ingredientService.getIngredientsByCategory("Dairy");
-        model.addAttribute("dairys", dairys);
 
+        for (Ingredient dairy: dairys) {
+            if (!(dairy.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                dairy.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("dairys", dairys);
         return "dairy";
     }
 
@@ -171,8 +227,15 @@ public class IngredientController {
         model.addAttribute("another", null);
 
         List<Ingredient> proteins = ingredientService.getIngredientsByCategory("Protein");
-        model.addAttribute("proteins", proteins);
 
+        for (Ingredient protein: proteins) {
+            if (!(protein.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                protein.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("proteins", proteins);
         return "protein";
     }
 
@@ -181,8 +244,15 @@ public class IngredientController {
         model.addAttribute("another", null);
 
         List<Ingredient> grains = ingredientService.getIngredientsByCategory("Grains");
-        model.addAttribute("grains", grains);
 
+        for (Ingredient grain: grains) {
+            if (!(grain.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                grain.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("grains", grains);
         return "grains";
     }
 
@@ -191,8 +261,15 @@ public class IngredientController {
         model.addAttribute("another", null);
 
         List<Ingredient> herbsAndSpices = ingredientService.getIngredientsByCategory("Herbs & Spices");
-        model.addAttribute("herbsAndSpices", herbsAndSpices);
 
+        for (Ingredient herbOrSpice: herbsAndSpices) {
+            if (!(herbOrSpice.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                herbOrSpice.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("herbsAndSpices", herbsAndSpices);
         return "herbsAndSpices";
     }
 
@@ -201,8 +278,15 @@ public class IngredientController {
         model.addAttribute("another", null);
 
         List<Ingredient> others = ingredientService.getIngredientsByCategory("Other");
-        model.addAttribute("others", others);
 
+        for (Ingredient other: others) {
+            if (!(other.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                other.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("others", others);
         return "other";
     }
 

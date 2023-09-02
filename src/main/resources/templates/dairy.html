@@ -162,80 +162,28 @@
 
 
 
-    <div class="container-fluid border, text-center" style="background-color: #F2F4FF">
+    <div class="container-fluid border, text-center" style="background-color: #F2F4FF;" >
 
 
         <div class="row" style="padding: 30px;">
-            <div class="col-md-1">
 
-            </div>
 
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngitem.com/pimgs/m/137-1375423_transparent-milk-carton-png-small-chocolate-milk-carton.png"
-                         style="max-height: 200px; max-width: 200px;"
+            <div class="col-md-2 mb-5" th:each="dairy, rowStat : ${dairys}">
 
-                         class="card-img-top" alt="Fissure in Sandstone" />
-                    <div class="card-body">
-                        <h6 class="card-title">2% Milk</h6>
+                <a th:href="@{/updateIngredient(ingredient_id=${dairy.ingredient_id})}">
+                    <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
+                        <img th:src="${dairy.imageURL}"
+                             style="max-height: 200px; max-width: 200px;"
+
+                             class="card-img-top" alt="Ingredient Image" />
+                        <div class="card-body">
+                            <h6 class="card-title" th:text="${dairy.name}">Apple</h6>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://stordfkenticomedia.blob.core.windows.net/df-us/lolfs/media/lol-fs-products/00034500440066-600x600.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Cheddar Cheese</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://png.monster/wp-content/uploads/2022/06/png.monster-811.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Swiss Cheese</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://purepng.com/public/uploads/large/purepng.com-butterfood-dairy-milk-butter-buttermilk-cream-butterfat-941524621398zsmge.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Butter</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngitem.com/pimgs/m/200-2006964_transparent-yogurt-png-imagenes-de-yogurt-png-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Yogurt</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
+                </a>
 
             </div>
         </div>
-
-
-
-
     </div></div>
 
 
