@@ -125,14 +125,33 @@ public class IngredientController {
 
     @GetMapping("/ingredients/fruit")
     public String getFruitIngredients(Model model) {
+
         model.addAttribute("another", null);
 
-        return "index";
+        List<Ingredient> fruits = ingredientService.getIngredientsByCategory("Fruit");
+
+
+        for (Ingredient fruit: fruits) {
+            if (!(fruit.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                fruit.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+
+        model.addAttribute("fruits", fruits);
+        return "fruit";
     }
+
+
+
 
     @GetMapping("/ingredients/vegetable")
     public String getVegetableIngredients(Model model) {
         model.addAttribute("another", null);
+
+        List<Ingredient> vegetables = ingredientService.getIngredientsByCategory("Vegetable");
+        model.addAttribute("vegetables", vegetables);
 
         return "vegetable";
     }
@@ -141,12 +160,18 @@ public class IngredientController {
     public String getDairyIngredients(Model model) {
         model.addAttribute("another", null);
 
+        List<Ingredient> dairys = ingredientService.getIngredientsByCategory("Dairy");
+        model.addAttribute("dairys", dairys);
+
         return "dairy";
     }
 
     @GetMapping("/ingredients/protein")
     public String getProteinIngredients(Model model) {
         model.addAttribute("another", null);
+
+        List<Ingredient> proteins = ingredientService.getIngredientsByCategory("Protein");
+        model.addAttribute("proteins", proteins);
 
         return "protein";
     }
@@ -155,6 +180,9 @@ public class IngredientController {
     public String getGrainsIngredients(Model model) {
         model.addAttribute("another", null);
 
+        List<Ingredient> grains = ingredientService.getIngredientsByCategory("Grains");
+        model.addAttribute("grains", grains);
+
         return "grains";
     }
 
@@ -162,12 +190,18 @@ public class IngredientController {
     public String getHerbsAndSpicesIngredients(Model model) {
         model.addAttribute("another", null);
 
+        List<Ingredient> herbsAndSpices = ingredientService.getIngredientsByCategory("Herbs & Spices");
+        model.addAttribute("herbsAndSpices", herbsAndSpices);
+
         return "herbsAndSpices";
     }
 
     @GetMapping("/ingredients/other")
     public String getOtherIngredients(Model model) {
         model.addAttribute("another", null);
+
+        List<Ingredient> others = ingredientService.getIngredientsByCategory("Other");
+        model.addAttribute("others", others);
 
         return "other";
     }
