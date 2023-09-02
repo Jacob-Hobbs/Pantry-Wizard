@@ -8,7 +8,7 @@
     <meta name="description" content="This page contains the start of the Pantry Wizard web page.">
     <title>Pantry Wizard</title>
     <!-- how to add icon to web page tab: -->
-    <link rel="icon" href="img/wizardHat.png" type="image/fruit">
+    <link rel="icon" th:href="@{/hat5.png}" type="image/fruit">
 
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -98,12 +98,14 @@
 
     <div class="row" style="height: 125px">
         <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
-            <i class="fas fa-hat-wizard"
-               style="scale: 300%;
+            <a href="/ingredients">
+                <i class="fas fa-hat-wizard"
+                   style="scale: 300%;
                        padding-top: 13px;
                         color: #0d6efd;
                         padding-right: 10px">
-            </i>
+                </i>
+            </a>
             Pantry Wizard
             <a href="/ingredients/fruit">
                 <button class="btn btn-primary" style="font-family: sans-serif"><i class="fas fa-fish"></i> | Ingredients</button>
