@@ -165,27 +165,27 @@
                         </div>
                         <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
                             <label for="name" style="justify-self: left; padding-bottom: 7px; color: #eec643">Name</label>
-                            <input type="text" th:field="*{name}"  class="form-control" id="name" aria-describedby="emailHelp" placeholder="Salt">
+                            <input type="text" th:field="*{name}"  class="form-control" id="name" aria-describedby="emailHelp" placeholder="Salt" required>
 
                         </div>
                         <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
                             <label for="calories" style="justify-self: left; padding-bottom: 7px; color: #eec643">Calories</label>
-                            <input type="text" th:field="*{calories}" class="form-control" id="calories" aria-describedby="emailHelp" placeholder="0">
+                            <input type="text" th:field="*{calories}" class="form-control" id="calories" aria-describedby="emailHelp" placeholder="0" required>
                         </div>
                         <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
                             <label for="price" style="justify-self: left; padding-bottom: 7px; color: #eec643">Price</label>
-                            <input type="text" th:field="*{price}" class="form-control" id="price" aria-describedby="emailHelp" placeholder="1.99">
+                            <input type="text" th:field="*{price}" class="form-control" id="price" aria-describedby="emailHelp" placeholder="1.99" required>
 
                         </div>
                         <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
                             <label for="image" style="justify-self: left; padding-bottom: 7px; color: #eec643">Image URL</label>
-                            <input type="text" th:field="*{imageURL}" class="form-control" id="image" placeholder="www.images/salt.png">
+                            <input type="text" th:field="*{imageURL}" class="form-control" id="image" placeholder="www.images/salt.png" required>
                         </div>
 
                         <div class="form-group" style="padding-bottom: 35px; padding-left: 50px; padding-right: 50px;">
                             <label for="category" style="justify-self: left; padding-bottom: 7px; color: #eec643">Category</label>
-                            <select class="form-select" aria-label="Default select example" id="category" name="category">
-                                <option selected>Select a category</option>
+                            <select class="form-select" id="category" name="category" required>
+                                <option selected disabled value="">Select a category</option>
                                 <option value="Fruit">Fruit</option>
                                 <option value="Vegetable">Vegetable</option>
                                 <option value="Dairy">Dairy</option>
@@ -195,6 +195,9 @@
                                 <option value="Other">Other</option>
 
                             </select>
+                            <div class="invalid-feedback">
+                                Please select a valid category.
+                            </div>
                         </div>
 
                         <div class="form-group" style="padding-bottom: 15px; text-align: center">

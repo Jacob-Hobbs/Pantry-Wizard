@@ -74,7 +74,8 @@ public class IngredientController {
 
         ingredientService.saveIngredient(ingredient);
 
-        return "index";
+        // use "Post/Redirect/Get" (PRG) pattern to prevent data duplication.
+        return "redirect:/ingredients/fruit";
     }
 
 
