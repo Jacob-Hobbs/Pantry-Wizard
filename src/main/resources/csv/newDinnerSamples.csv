@@ -1,0 +1,41 @@
+1,Pancakes,250,1,https://i.pinimg.com/originals/ab/32/ac/ab32ac5953c00983c93f8fa8c98a68b1.png,Flour;2% Milk;Butter;Eggs,Breakfast
+2,Omelette,260,1.1,https://i.pinimg.com/564x/00/b2/38/00b238c6588eb4590229d5588d244db9.jpg,Eggs;Cheddar Cheese,Breakfast
+3,French Toast,270,1.2,https://www.pngmart.com/files/5/French-Toast-PNG-Photos.png,Bread;Molasses;,Breakfast
+4,Sausage Biscuit ,280,1.3,https://corporate.mcdonalds.com/content/dam/sites/corp/nfl/newsroom/0083_SausageEggMcMuffin.uuid.png,Bread;Pork Chop;Cheddar Cheese,Breakfast
+5,Toast with Jam,290,1.4,https://static.vecteezy.com/system/resources/previews/012/896/180/original/toasted-bread-with-strawberry-jam-free-png.png,Bread;Butter;Grapes,Breakfast
+6,Fruit Salad,300,1.5,https://static.vecteezy.com/system/resources/previews/025/229/907/original/fresh-fruit-salad-bowl-isolated-on-transparent-background-png.png,Apple;Banana;Grapes;Orange;Pineapple;Cherry;Watermelon;Peach;Strawberry,Breakfast
+7,Bacon & Eggs,310,1.6,https://media.istockphoto.com/id/173632365/photo/two-eggs-over-easy-with-bacon-on-white-plate.jpg?s=170667a&w=0&k=20&c=EoTwhH4b4G4K074JuI9G-7CbKiPkECLSdVn0AaY-fTA=,Pork Chop;Eggs,Breakfast
+8,Full English Breakfast,320,1.7,https://www.pngitem.com/pimgs/m/230-2309812_english-breakfast-individual-english-breakfast-png-transparent-png.png,Pork Chop;Eggs;Tomato;Potato;Onion;Bread;Butter,Breakfast
+9,Waffles,330,1.8,https://i.pinimg.com/736x/cf/c6/aa/cfc6aadbecd613f70e5a3f4dcdf89ffb.jpg,Flour;2% Milk;Butter;Eggs,Breakfast
+10,Everything Bagel,340,1.9,https://i.pinimg.com/originals/7a/88/5b/7a885be430d9dd3903c6127615230e55.png,Flour;2% Milk;Olive Oil;Eggs;Black Pepper,Breakfast
+11,Cheeseburger,350,2,https://static.vecteezy.com/system/resources/previews/021/952/562/original/tasty-hamburger-on-transparent-background-png.png,Bread;Sirloin;Cheddar Cheese;Tomato;Onion,Lunch
+12,Pepperoni Pizza,360,2.1,https://freepngimg.com/save/35510-pepperoni-pizza/1000x981,Flour;2% Milk;Butter;Tomato;Cheddar Cheese;Pork Chop,Lunch
+13,Pretzel,370,2.2,https://m.media-amazon.com/images/I/71FQWle8U3L.jpg,Flour;2% Milk;Butter;Eggs;Himalayan Sea Salt,Lunch
+14,Hot dog,380,2.3,https://clipart-library.com/image_gallery2/Hot-Dog-Transparent.png,Bread;Pork Chop;Chuck Roast;Onion;Tomato,Lunch
+15,Tuna Salad Sandwich ,390,2.4,https://media.istockphoto.com/id/174639800/photo/tuna-fish-salad-sandwich.jpg?s=170667a&w=0&k=20&c=a6hv7gMwkjkfq4MVk4e_LorWpVn1UsANwrvvMQ9i-bE=,Bread;Canned Tuna;Olive Oil;Black Pepper,Lunch
+16,Caesar Salad,400,2.5,https://freepngimg.com/thumb/salad/34916-3-grilled-chicken-caesar-salad.png,Olive Oil;,Lunch
+17,Tacos,410,2.6,https://img.freepik.com/free-photo/traditional-mexican-tacos-with-meat-vegetables-isolated-white-background-ai-generative_123827-24862.jpg?w=2000,Chuck Roast;Chilli Powder;Cumin;Tomato;Flour Tortilla,Lunch
+18,Spaghetti with Meatballs,420,2.7,https://assets1.cbsnewsstatic.com/hub/i/r/2016/01/23/3b10f6e2-10f2-4989-8e81-6f9b269f0ce8/thumbnail/640x448/e44c5b3fa2fde0f27eba029a07261344/meatball-shop.png?v=0b4ae642db52799a178d90d83603a9dc,Rotini Pasta;Chuck Roast;Tomato;Bay Leaf;Basil,Dinner
+19,Sirloin Steak,430,2.8,https://www.nicepng.com/png/full/185-1858678_related-wallpapers-steak-and-potatoes-transparent.png,Sirloin;Black Pepper;Butter;Thyme,Dinner
+20,Bouillabaisse,440,2.9,https://static.vecteezy.com/system/resources/previews/025/269/779/non_2x/bouillabaisse-with-ai-generated-free-png.png,Bay Leaf;Thyme;Red Snapper;Octopus;Prawn;Oyster;Scallop;Olive Oil,Dinner
+21,Doner Kebab,450,3,https://pngimg.com/d/kebab_PNG48.png,Lamb;Thyme;Onion;Carrot;Tomato,Dinner
+22,Eggplant Parmigiana,460,3.1,https://jow.com/_next/image?url=https%3A%2F%2Fstatic.jow.fr%2F880x880%2Frecipes%2FFrLdINuZ8FBeAg.png&w=2560&q=100,Eggplant;Tomato;Thyme;Flour;Olive Oil,Dinner
+23,Fajita Mix,470,3.2,https://pinatasmexicangrill.com/wp-content/uploads/2022/08/menu-img3.png,Onion;Tomato;Chilli Powder;Cumin;Flour Tortilla,Dinner
+24,Sushi Rolls,480,3.3,https://img.freepik.com/free-photo/sushi-tray-with-makis-tuna-nigiris-salmon-view-from_463209-112.jpg,White Rice;Blue Crab;Red Snapper;Asparagus;Yogurt,Dinner
+25,Salisbury Steak,490,3.4,https://www.nicepng.com/png/full/50-503737_salisbury-steak-michelinas-salisbury-steak-8-oz-tray.png,Chuck Roast;Thyme;Butter;Black Pepper;Onion,Dinner
+26,Duck Confit,500,3.5,https://elmercadobangkok.com/wp-content/uploads/2021/12/Duck-Confit.png,Flour;Cumin;Bay Leaf;Black Pepper;Onion,Dinner
+27,French Onion Soup,510,3.6,https://clipart-library.com/img/2005316.jpg,Onion;Bread;Swiss Cheese;Butter,Dinner
+28,Chips & Salsa,520,3.7,https://tacotimenw.com/wp-content/uploads/2018/10/CHIPS-and-SALSA-343x300.png,Flour Tortilla;Tomato;Onion,Appetizers
+29,Blooming Onion,530,3.8,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkAqjKwROYsrvbskUG8w_n7aIGnnUT3qMTBcNVaRssVkzwjFYjrOl32K31m2tvR6G3LAo&usqp=CAU,Onion;Flour;Black Pepper;Olive Oil,Appetizers
+30,Buffalo Wings,540,3.9,https://www.pngitem.com/pimgs/m/486-4861130_appetizer-transparent-hd-png-download.png,Flour;Olive Oil;Black Pepper;Chilli Powder,Appetizers
+31,Mozzarella Sticks,550,4,https://www.nicepng.com/png/detail/157-1575138_mozzarella-sticks-captain-mozzarella-sticks.png,Flour;Olive Oil;Thyme;Swiss Cheese,Appetizers
+32,Banana Split,560,4.1,https://www.pngarts.com/files/5/Banana-Split-PNG-Background-Image.png,Banana;2% Milk;Pineapple;Strawberry,Dessert
+33,Chocolate Cake,570,4.2,https://www.pngitem.com/pimgs/m/107-1073675_chocolate-cake-transparent-png-chocolate-mocha-cake-transparent.png,Flour;2% Milk;Butter;Eggs,Dessert
+34,Fried Ice Cream,580,4.3,https://media.istockphoto.com/id/133895900/photo/fried-ice-cream.jpg?s=612x612&w=0&k=20&c=RIurVPzJcWuZyfHDnXbsiSfGLgxFpku1CrDY15asuiI=,Banana;2% Milk;Anise Star;Cinnamon;Flour,Dessert
+35,Cherry Cheesecake,590,4.4,https://www.pngall.com/wp-content/uploads/5/Cheesecake-PNG-Images.png,Flour;2% Milk;Butter;Eggs;Yogurt;Cherry,Dessert
+36,Crepe,600,4.5,https://www.pghcrepes.com/assets/img/carousel4.jpg,Flour;2% Milk;Butter;Eggs;Blackberry,Dessert
+37,Banana Foster,610,4.6,https://i.pinimg.com/originals/76/f8/30/76f8304e8c1bdf4e5f97dea296264c60.png,Flour;2% Milk;Butter;Eggs;Banana;Anise Star,Dessert
+38,Turtle Sundae,620,4.7,https://www.braums.com/wp-content/uploads/2018/04/Pecan-Caramel-Fudge-Sundae.jpg,2% Milk;Molasses;Blackberry,Dessert
+39,Chocolate Chip Cookies,630,4.8,https://purepng.com/public/uploads/large/purepng.com-cookiefood-chocolate-bakery-sweet-tasty-eat-cookie-biscuit-941524599982s6zsh.png,Flour;2% Milk;Butter;Eggs;Molasses,Dessert
+40,Fruit Tart,640,4.9,https://media.istockphoto.com/id/157610681/photo/fruit-tart.jpg?s=612x612&w=0&k=20&c=NNEklnFwy8p9aZa0e0w8qOjtDmUNTWM_Rzw7vAVwBo4=,Flour;2% Milk;Butter;Eggs;Cherry;Kiwi;Strawberry;Pear,Dessert
+41,Peach Cobbler,650,5,https://static.vecteezy.com/system/resources/previews/025/269/652/original/peach-cobbler-with-ai-generated-free-png.png,Flour;2% Milk;Butter;Eggs;Peach,Dessert

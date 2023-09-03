@@ -11,70 +11,71 @@ public class Recipe {
     @Id
     @Column(name="recipe_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int recipeId;
+    private int recipe_Id;
 
     @Column(name="name")
-    private String recipeName;
+    private String name;
 
     @Column(name="price")
-    private int recipePrice;
+    private double price;
 
     @Column(name="calories")
-    private int recipeCalories;
+    private int calories;
 
     @Column(name="imageURL")
     private String imageURL;
 
     @Column(name="ingredientList")
-    @OneToMany
-    private List<Ingredient> ingredientList = new ArrayList<>();
+    @ElementCollection
+    private List<String> ingredientList = new ArrayList<>();
 
     @Column(name="category")
-    private String recipeCategory;
+    private String category;
 
     public Recipe() {
         // blank, no-argument constructor required by JPA
     }
 
-    public Recipe(int recipeId, String recipeName, int recipePrice, int recipeCalories, String imageURL, String recipeCategory) {
-        this.recipeId = recipeId;
-        this.recipeName = recipeName;
-        this.recipePrice = recipePrice;
-        this.recipeCalories = recipeCalories;
+    public Recipe(int recipe_Id, String name, double price, int calories, String imageURL, List<String> ingredientList, String category) {
+        this.recipe_Id = recipe_Id;
+        this.name = name;
+        this.price = price;
+        this.calories = calories;
         this.imageURL = imageURL;
-        this.recipeCategory = recipeCategory;
+        this.ingredientList = ingredientList;
+        this.category = category;
     }
 
-    public int getRecipeId() {
-        return recipeId;
+    public int getRecipe_Id() {
+        return recipe_Id;
     }
 
-    public void setRecipeId(int recipeId) {
-        this.recipeId = recipeId;
+    public void setRecipe_Id(int recipe_Id) {
+        this.recipe_Id = recipe_Id;
     }
 
-    public String getRecipeName() {
-        return recipeName;
+    public String getName() {
+        return name;
     }
 
-    public void setRecipeName(String recipeName) {
-        this.recipeName = recipeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getRecipePrice() {
-        return recipePrice;
+    public double getPrice() {
+        return price;
     }
 
-    public void setRecipePrice(int recipePrice) {
-        this.recipePrice = recipePrice;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public int getRecipeCalories() {
-        return recipeCalories;
+    public int getCalories() {
+        return calories;
     }
 
-    public void setRecipeCalories(int recipeCalories) {
-        this.recipeCalories = recipeCalories;
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
     public String getImageURL() {
@@ -85,31 +86,19 @@ public class Recipe {
         this.imageURL = imageURL;
     }
 
-    public List<Ingredient> getIngredientList() {
+    public List<String> getIngredientList() {
         return ingredientList;
     }
 
-    public void setIngredientList(List<Ingredient> ingredientList) {
+    public void setIngredientList(List<String> ingredientList) {
         this.ingredientList = ingredientList;
     }
 
-    public String getRecipeCategory() {
-        return recipeCategory;
+    public String getCategory() {
+        return category;
     }
 
-    public void setRecipeCategory(String recipeCategory) {
-        this.recipeCategory = recipeCategory;
-    }
-
-    @Override
-    public String toString() {
-        return "Recipe{" +
-                "recipeId=" + recipeId +
-                ", recipeName='" + recipeName + '\'' +
-                ", recipePrice=" + recipePrice +
-                ", recipeCalories=" + recipeCalories +
-                ", imageURL='" + imageURL + '\'' +
-                ", recipeCategory='" + recipeCategory + '\'' +
-                '}';
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

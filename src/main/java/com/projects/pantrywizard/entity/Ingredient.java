@@ -30,6 +30,7 @@ public class Ingredient {
     @Column(name="category")
     private String category;
 
+
     public Ingredient() {
         // blank, no-argument constructor required by JPA
     }

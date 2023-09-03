@@ -19,5 +19,7 @@ public interface IngredientService {
 
     void delete(Ingredient ingredient);
 
+    Ingredient getIngredientByName(String name);
+
 
 }
