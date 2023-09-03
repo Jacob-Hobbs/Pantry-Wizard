@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jacob Hobbs">
+    <meta name="description" content="This page contains the start of the Pantry Wizard web page.">
+    <title>Pantry Wizard</title>
+    <!-- how to add icon to web page tab: -->
+    <link rel="icon" th:href="@{/hat5.png}" type="image/fruit">
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous"
+    />
+
+    <style>
+
+        [class*="topRow"] {
+            padding: 1rem;
+            background-color: #011638;
+            color: #fff;
+        }
+        [class*="col2"] {
+            padding: 1rem;
+            background-color: #F2F4FF;
+            border: 2px solid #F2F4FF;
+        }
+        [class*="col3"] {
+            background-color: #F2F4FF;
+            border: 2px solid #F2F4FF;
+            color: #F2F4FF;
+        }
+
+
+    </style>
+
+    <title>font awesome icons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
+
+    <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+
+
+</head>
+
+<body>
+
+
+
+<div class="container-fluid border, text-center" style="background-color: #F2F4FF">
+
+
+
+
+    <div class="row" style="height: 125px">
+        <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
+            <a href="/ingredients">
+                <i class="fas fa-hat-wizard"
+                   style="scale: 300%;
+                       padding-top: 13px;
+                        color: #0d6efd;
+                        padding-right: 10px">
+                </i>
+            </a>
+            Pantry Wizard
+            <a href="/ingredients/fruit">
+                <button class="btn btn-primary" style="font-family: sans-serif"><i class="fas fa-fish"></i> | Ingredients</button>
+            </a>
+
+            <a href="/recipes/breakfast">
+                <button class="btn btn-primary" style="font-family: sans-serif"><i class="fas fa-book"></i> | Recipes</button>
+            </a>
+            <a href="/login">
+                <button class="btn btn-primary" style="font-family: sans-serif"><i class="fas fa-power-off"></i> | Log Out</button>
+            </a>
+        </div>
+    </div>
+    <div class="container-fluid border, text-center">
+        <div class="text-center">
+            <div class="col2">
+                <a href="/recipes/breakfast">
+                    <button class="btn btn-primary" ><i class="fas fa-bacon"></i>  Breakfast</button>
+                </a>
+                <a href="/recipes/lunch">
+                    <button class="btn btn-primary"><i class="fas fa-burger"></i>  Lunch</button>
+                </a>
+                <a href="/recipes/dinner">
+                    <button class="btn btn-primary"><i class="fas fa-shrimp"></i>  Dinner</button>
+                </a>
+            </div>
+        </div>
+        <div class="text-center" style="padding-bottom: 15px">
+            <div class="col3">
+                <a href="/recipes/appetizers">
+                    <button class="btn btn-primary"><i class="fas fa-champagne-glasses"></i>  Appetizers</button>
+                </a>
+                <a href="/recipes/dessert">
+                    <button class="btn btn-primary"><i class="fas fa-ice-cream"></i>  Dessert</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+<div class="container-fluid border, text-center" >
+    <div class="row" style="height: 50px; background-color: #F2F4FF">
+
+    </div>
+</div>
+
+<div class="container-fluid border-0" style="padding-bottom: 150px; background-color: #F2F4FF">
+    <div class="row" style="height: 300px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                </div>
+                <div class="col-md-3"
+                     style="background-color: #011638;
+             padding-top: 35px;
+             height: 850px;
+
+             min-width: 400px;
+             max-width: 800px;">
+                    <form th:action="@{/addRecipe}" th:object="${recipe}" method="post">
+                        <div>
+                            <p style="padding-bottom: 5px; text-align: center; color: #eec643; font-size: 24px;">New Recipe:</p>
+                        </div>
+                        <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
+                            <label for="name" style="justify-self: left; padding-bottom: 7px; color: #eec643">Name</label>
+                            <input type="text" th:field="*{name}"  class="form-control" id="name" aria-describedby="emailHelp" placeholder="Salt" required maxlength="25">
+                        </div>
+
+
+
+
+
+
+                        <div class="box mx-auto" style="border: 2px solid #eec643; padding-top: 10px; width: 325px;">
+                            <h6 style="padding-left: 25px; color: #eec643; padding-top: 10px">Add Ingredients to Recipe</h6>
+                            <div class="form-group" style="padding-bottom: 10px; padding-left: 50px; padding-right: 50px;">
+                                <label for="categorySelect" style="justify-self: left; padding-bottom: 7px; color: #0d6efd; font-size: 14px">Choose Ingredient Category</label>
+                                <select class="form-select" id="categorySelect" name="category" required>
+                                    <option selected disabled value="">Select a category</option>
+                                    <option th:each="category : ${categories}" th:value="${category}" th:text="${category}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid category.
+                                </div>
+                            </div>
+                            <div class="form-group" style="padding-bottom: 35px; padding-left: 50px; padding-right: 50px;">
+                                <label for="ingredientSelect" style="justify-self: left; padding-bottom: 7px; color: #0d6efd; font-size: 14px">Choose Ingredient</label>
+                                <select class="form-select" id="ingredientSelect" name="ingredient" required>
+                                    <option selected disabled value="">Select an ingredient</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid ingredient.
+                                </div>
+                            </div>
+                        </div>
+
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            $(document).ready(function () {
+                                // Get references to the first and second select forms
+                                var categorySelect = $("#categorySelect");
+                                var ingredientSelect = $("#ingredientSelect");
+
+                                // Event listener for changes in the category select form
+                                categorySelect.on("change", function () {
+                                    // Clear existing options in the ingredient select form
+                                    ingredientSelect.empty();
+
+                                    // Get the selected category
+                                    var selectedCategory = $(this).val();
+
+                                    // Make an AJAX request to fetch ingredients for the selected category
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/getIngredientsByCategory", // Replace with your endpoint
+                                        data: { category: selectedCategory },
+                                        success: function (data) {
+                                            // Populate the ingredient select form with fetched data
+                                            data.forEach(function (ingredient) {
+                                                ingredientSelect.append(
+                                                    $("<option></option>")
+                                                        .attr("value", ingredient)
+                                                        .text(ingredient)
+                                                );
+                                            });
+                                        },
+                                        error: function (error) {
+                                            console.error("Error fetching ingredients: " + error);
+                                        },
+                                    });
+                                });
+                            });
+                        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px; padding-top: 10px">
+                            <label for="calories" style="justify-self: left; padding-bottom: 7px; color: #eec643">Calories</label>
+                            <input type="number" th:field="*{calories}" class="form-control" id="calories" aria-describedby="emailHelp" placeholder="0" required min="0">
+                        </div>
+                        <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
+                            <label for="price" style="justify-self: left; padding-bottom: 7px; color: #eec643">Price</label>
+                            <input type="number" th:field="*{price}" class="form-control" id="price" aria-describedby="emailHelp" placeholder="1.99" required step="0.01" min="0">
+
+                        </div>
+                        <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
+                            <label for="image" style="justify-self: left; padding-bottom: 7px; color: #eec643">Image URL</label>
+                            <input type="text" th:field="*{imageURL}" class="form-control" id="image" placeholder="www.images/salt.png" required>
+                        </div>
+
+                        <div class="form-group" style="padding-bottom: 35px; padding-left: 50px; padding-right: 50px;">
+                            <label for="category" style="justify-self: left; padding-bottom: 7px; color: #eec643">Category</label>
+                            <select class="form-select" id="category" name="category" required>
+                                <option selected disabled value="">Select a category</option>
+                                <option value="Fruit">Breakfast</option>
+                                <option value="Vegetable">Lunch</option>
+                                <option value="Dairy">Dinner</option>
+                                <option value="Protein">Appetizers</option>
+                                <option value="Grains">Dessert</option>
+
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid category.
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="padding-bottom: 15px; text-align: center">
+                            <a href="index.html">
+                                <button type="submit" class="btn btn-primary" >Submit</button>
+                            </a>
+                        </div>
+
+
+                    </form>
+
+                </div>
+                <div class="col-md">
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid border, text-center" style="background-color: #F2F4FF; padding-top: 25px">
+            <div class="row " style="text-align: center">
+                <div class="col-md-12" style="background-color: #011638">
+                    <h2 style="text-align: center; color: #eec643; padding-top: 5px">Ingredients:</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid border, text-center" style="background-color: #F2F4FF;" >
+
+
+            <div class="row" style="padding: 30px;">
+
+
+                <div class="col-md-2 mb-5" th:each="breakfast, rowStat : ${breakfasts}">
+
+
+                    <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
+                        <img th:src="${breakfast.imageURL}"
+                             style="max-height: 200px; max-width: 200px;"
+
+                             class="card-img-top" alt="Recipe Image" />
+                        <div class="card-body">
+                            <h6 class="card-title" th:text="${breakfast.name}">Apple</h6>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div></div>
+
+    </div>
+</div>
+
+
+
+<div class="container-fluid border, text-center" >
+    <div class="row" style="height: 175px; background-color: #F2F4FF">
+
+    </div>
+</div>
+
+
+
+
+
+<div class="container-fluid border, text-center" style="background-color: #F2F4FF; padding-top: 750px;">
+
+
+    <div class="row" style="height: 125px">
+        <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
+
+            <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
+                Pantry
+                <i class="fas fa-hat-wizard"
+                   style="scale: 300%;
+                               padding-top: 8px;
+
+                               padding-left: 12px;
+                               color: #0d6efd;
+                               padding-right: 10px">
+                </i>
+                Wizard
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- These two lines are used to install Bootstrap dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"
+    ></script>
+
+
+
+
+
+</div>
+</body>
+
+
+
+</html>
+

@@ -122,30 +122,32 @@
     <div class="container-fluid border, text-center">
         <div class="text-center">
             <div class="col2">
-                <a href="breakfast.html">
+                <a href="/recipes/breakfast">
                     <button class="btn btn-primary" ><i class="fas fa-bacon"></i>  Breakfast</button>
                 </a>
-                <a href="lunch.html">
+                <a href="/recipes/lunch">
                     <button class="btn btn-primary"><i class="fas fa-burger"></i>  Lunch</button>
                 </a>
-                <a href="dinner.html">
+                <a href="/recipes/dinner">
                     <button class="btn btn-primary"><i class="fas fa-shrimp"></i>  Dinner</button>
                 </a>
             </div>
         </div>
         <div class="text-center" style="padding-bottom: 15px">
             <div class="col3">
-                <a href="appetizers.html">
+                <a href="/recipes/appetizers">
                     <button class="btn btn-primary"><i class="fas fa-champagne-glasses"></i>  Appetizers</button>
                 </a>
-                <a href="dessert.html">
+                <a href="/recipes/dessert">
                     <button class="btn btn-primary"><i class="fas fa-ice-cream"></i>  Dessert</button>
                 </a>
             </div>
         </div>
         <div class="text-center">
             <div class="col3" style="padding-bottom: 35px">
-                <button class="btn btn-primary" style="background-color: #011638; border-color: #011638;"><i class="fas fa-plus"></i>  Add Recipe</button>
+                <a href="/addRecipe">
+                    <button class="btn btn-primary" style="background-color: #011638; border-color: #011638;"><i class="fas fa-plus"></i>  Add Recipe</button>
+                </a>
             </div>
         </div>
     </div>
@@ -154,140 +156,28 @@
 
 
 
-    <div class="container-fluid border, text-center" style="background-color: #F2F4FF">
+    <div class="container-fluid border, text-center" style="background-color: #F2F4FF;" >
 
 
         <div class="row" style="padding: 30px;">
-            <div class="col-md-1">
 
-            </div>
 
-            <div class="col-md-2">
+            <div class="col-md-2 mb-5" th:each="dessert, rowStat : ${desserts}">
+
+
                 <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngarts.com/files/5/Banana-Split-PNG-Background-Image.png"
+                    <img th:src="${dessert.imageURL}"
                          style="max-height: 200px; max-width: 200px;"
 
-                         class="card-img-top" alt="Fissure in Sandstone" />
+                         class="card-img-top" alt="Recipe Image" />
                     <div class="card-body">
-                        <h6 class="card-title">Banana Split</h6>
+                        <h6 class="card-title" th:text="${dessert.name}">Apple</h6>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngitem.com/pimgs/m/107-1073675_chocolate-cake-transparent-png-chocolate-mocha-cake-transparent.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Chocolate Cake</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://media.istockphoto.com/id/133895900/photo/fried-ice-cream.jpg?s=612x612&w=0&k=20&c=RIurVPzJcWuZyfHDnXbsiSfGLgxFpku1CrDY15asuiI="
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Fried Ice cream</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngall.com/wp-content/uploads/5/Cheesecake-PNG-Images.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Cherry Cheesecake</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pghcrepes.com/assets/img/carousel4.jpg"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Crepe</h6>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
 
             </div>
         </div>
-
-        <div class="row" style="padding: 30px">
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://i.pinimg.com/originals/76/f8/30/76f8304e8c1bdf4e5f97dea296264c60.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Banana Foster</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.braums.com/wp-content/uploads/2018/04/Pecan-Caramel-Fudge-Sundae.jpg"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Turtle Sundae</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://purepng.com/public/uploads/large/purepng.com-cookiefood-chocolate-bakery-sweet-tasty-eat-cookie-biscuit-941524599982s6zsh.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Chocolate Chip Cookie</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://media.istockphoto.com/id/157610681/photo/fruit-tart.jpg?s=612x612&w=0&k=20&c=NNEklnFwy8p9aZa0e0w8qOjtDmUNTWM_Rzw7vAVwBo4="
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Fruit Tart</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://static.vecteezy.com/system/resources/previews/025/269/652/original/peach-cobbler-with-ai-generated-free-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Peach Cobbler</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-
-            </div>
-
-        </div>
-
-
-
-
     </div></div>
 
 

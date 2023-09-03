@@ -290,6 +290,15 @@ public class IngredientController {
         return "other";
     }
 
+    @GetMapping("/getIngredientsByCategory")
+    @ResponseBody
+    public List<String> getIngredientsByCategory(@RequestParam String category) {
+        return ingredientService.getIngredientsByCategoryString(category);
+    }
+
+
+
+
 
 
 

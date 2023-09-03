@@ -11,9 +11,7 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -74,12 +72,113 @@ public class RecipeController {
     }
 
     @GetMapping("/recipes/breakfast")
-    public String getRecipes(Model model) {
+    public String getBreakfast(Model model) {
 
         model.addAttribute("something", null);
 
+        List<Recipe> breakfasts = recipeService.getRecipesByCategory("Breakfast");
+
+        for (Recipe breakfast: breakfasts) {
+            if (!(breakfast.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                breakfast.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("breakfasts", breakfasts);
+
         return "breakfast";
     }
+
+    @GetMapping("/recipes/lunch")
+    public String getLunch(Model model) {
+
+        model.addAttribute("something", null);
+
+        List<Recipe> lunchs = recipeService.getRecipesByCategory("Lunch");
+
+        for (Recipe lunch: lunchs) {
+            if (!(lunch.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                lunch.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("lunchs", lunchs);
+
+        return "lunch";
+    }
+
+    @GetMapping("/recipes/dinner")
+    public String getDinner(Model model) {
+
+        model.addAttribute("something", null);
+
+        List<Recipe> dinners = recipeService.getRecipesByCategory("Dinner");
+
+        for (Recipe dinner: dinners) {
+            if (!(dinner.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                dinner.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("dinners", dinners);
+
+        return "dinner";
+    }
+
+    @GetMapping("/recipes/appetizers")
+    public String getAppetizers(Model model) {
+
+        model.addAttribute("something", null);
+
+        List<Recipe> appetizers = recipeService.getRecipesByCategory("Appetizers");
+
+        for (Recipe appetizer: appetizers) {
+            if (!(appetizer.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                appetizer.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("appetizers", appetizers);
+
+        return "appetizers";
+    }
+
+    @GetMapping("/recipes/dessert")
+    public String getDessert(Model model) {
+
+        model.addAttribute("something", null);
+
+        List<Recipe> desserts = recipeService.getRecipesByCategory("Dessert");
+
+        for (Recipe dessert: desserts) {
+            if (!(dessert.getImageURL().contains("https://"))) {
+                System.out.println("BAD IMAGE!!");
+                dessert.setImageURL("https://www.pngitem.com/pimgs/m/79-797178_fork-and-knife-crossed-like-the-letter-x.png");
+            }
+        }
+
+        model.addAttribute("desserts", desserts);
+
+        return "dessert";
+    }
+
+    @GetMapping("/addRecipe")
+    public String showAddRecipePage(Model model) {
+
+        Recipe recipe = new Recipe();
+        model.addAttribute("recipe", recipe);
+
+
+        List<String> categories = ingredientService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "addRecipe";
+    }
+
+
 
 
 

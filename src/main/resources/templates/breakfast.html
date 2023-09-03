@@ -122,30 +122,32 @@
     <div class="container-fluid border, text-center">
         <div class="text-center">
             <div class="col2">
-                <a href="breakfast.html">
+                <a href="/recipes/breakfast">
                     <button class="btn btn-primary" ><i class="fas fa-bacon"></i>  Breakfast</button>
                 </a>
-                <a href="lunch.html">
+                <a href="/recipes/lunch">
                     <button class="btn btn-primary"><i class="fas fa-burger"></i>  Lunch</button>
                 </a>
-                <a href="dinner.html">
+                <a href="/recipes/dinner">
                     <button class="btn btn-primary"><i class="fas fa-shrimp"></i>  Dinner</button>
                 </a>
             </div>
         </div>
         <div class="text-center" style="padding-bottom: 15px">
             <div class="col3">
-                <a href="appetizers.html">
+                <a href="/recipes/appetizers">
                     <button class="btn btn-primary"><i class="fas fa-champagne-glasses"></i>  Appetizers</button>
                 </a>
-                <a href="dessert.html">
+                <a href="/recipes/dessert">
                     <button class="btn btn-primary"><i class="fas fa-ice-cream"></i>  Dessert</button>
                 </a>
             </div>
         </div>
         <div class="text-center">
             <div class="col3" style="padding-bottom: 35px">
-                <button class="btn btn-primary" style="background-color: #011638; border-color: #011638;"><i class="fas fa-plus"></i>  Add Recipe</button>
+                <a href="/addRecipe">
+                    <button class="btn btn-primary" style="background-color: #011638; border-color: #011638;"><i class="fas fa-plus"></i>  Add Recipe</button>
+                </a>
             </div>
         </div>
     </div>
@@ -154,140 +156,28 @@
 
 
 
-    <div class="container-fluid border, text-center" style="background-color: #F2F4FF">
+    <div class="container-fluid border, text-center" style="background-color: #F2F4FF;" >
 
 
         <div class="row" style="padding: 30px;">
-            <div class="col-md-1">
 
-            </div>
 
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://i.pinimg.com/originals/ab/32/ac/ab32ac5953c00983c93f8fa8c98a68b1.png"
-                         style="max-height: 200px; max-width: 200px;"
+            <div class="col-md-2 mb-5" th:each="breakfast, rowStat : ${breakfasts}">
 
-                         class="card-img-top" alt="Fissure in Sandstone" />
-                    <div class="card-body">
-                        <h6 class="card-title">Pancakes</h6>
+
+                    <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
+                        <img th:src="${breakfast.imageURL}"
+                             style="max-height: 200px; max-width: 200px;"
+
+                             class="card-img-top" alt="Recipe Image" />
+                        <div class="card-body">
+                            <h6 class="card-title" th:text="${breakfast.name}">Apple</h6>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://i.pinimg.com/564x/00/b2/38/00b238c6588eb4590229d5588d244db9.jpg"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Omelette</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngmart.com/files/5/French-Toast-PNG-Photos.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >French Toast</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://corporate.mcdonalds.com/content/dam/sites/corp/nfl/newsroom/0083_SausageEggMcMuffin.uuid.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Sausage Biscuit</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://static.vecteezy.com/system/resources/previews/012/896/180/original/toasted-bread-with-strawberry-jam-free-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Toast with Jam</h6>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
 
             </div>
         </div>
-
-        <div class="row" style="padding: 30px">
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://static.vecteezy.com/system/resources/previews/025/229/907/original/fresh-fruit-salad-bowl-isolated-on-transparent-background-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Fruit Salad</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://media.istockphoto.com/id/173632365/photo/two-eggs-over-easy-with-bacon-on-white-plate.jpg?s=170667a&w=0&k=20&c=EoTwhH4b4G4K074JuI9G-7CbKiPkECLSdVn0AaY-fTA="
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Bacon & Eggs</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://www.pngitem.com/pimgs/m/230-2309812_english-breakfast-individual-english-breakfast-png-transparent-png.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Full English Breakfast</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://i.pinimg.com/736x/cf/c6/aa/cfc6aadbecd613f70e5a3f4dcdf89ffb.jpg"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Waffles</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img src="https://i.pinimg.com/originals/7a/88/5b/7a885be430d9dd3903c6127615230e55.png"
-                         style="max-height: 200px; max-width: 200px;"
-                         class="card-img-top" alt="Fissure in Sandstone"/>
-                    <div class="card-body">
-                        <h6 class="card-title" >Everything Bagel</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-
-            </div>
-
-        </div>
-
-
-
-
     </div></div>
 
 

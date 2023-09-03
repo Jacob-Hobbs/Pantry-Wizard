@@ -19,7 +19,10 @@ public interface IngredientService {
 
     void delete(Ingredient ingredient);
 
-    Ingredient getIngredientByName(String name);
+    List<String> getIngredientByName(String name);
 
 
+    List<String> getAllCategories();
+
+    List<String> getIngredientsByCategoryString(String selectedCategory);
 }
