@@ -36,4 +36,19 @@ public class RecipeServiceImpl implements RecipeService{
 
         return ingredientsInRecipe;
     }
+
+    @Override
+    public boolean isIngredientUsedInRecipe(String ingredientName) {
+        return recipeRepository.existsByIngredientListContaining(ingredientName);
+    }
+
+    @Override
+    public List<Recipe> getRecipesByIngredientName(String name) {
+        return recipeRepository.findByIngredientListContaining(name);
+    }
+
+    @Override
+    public void saveRecipes(List<Recipe> recipesToUpdate) {
+        recipeRepository.saveAll(recipesToUpdate);
+    }
 }

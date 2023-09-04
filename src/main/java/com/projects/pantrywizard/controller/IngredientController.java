@@ -2,7 +2,9 @@ package com.projects.pantrywizard.controller;
 
 import com.projects.pantrywizard.dao.IngredientRepository;
 import com.projects.pantrywizard.entity.Ingredient;
+import com.projects.pantrywizard.entity.Recipe;
 import com.projects.pantrywizard.service.IngredientService;
+import com.projects.pantrywizard.service.RecipeService;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,9 @@ public class IngredientController {
 
     @Autowired
     private IngredientService ingredientService;
+
+    @Autowired
+    private RecipeService recipeService;
 
     private List<Ingredient> localIngredientList;
 
@@ -150,12 +155,49 @@ public class IngredientController {
         return "redirect:/ingredients/" + category;
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @PostMapping("/deleteIngredient")
     public String deleteIngredient(@ModelAttribute("ingredient") Ingredient ingredient) {
 
         Optional<Ingredient> existingIngredient = ingredientService.getIngredientById(ingredient.getIngredient_id());
 
+
         if (existingIngredient.isPresent()) {
+
+            Ingredient newIngredient = existingIngredient.get();
+
+            System.out.println("Searching for recipes with ingredient name: " + newIngredient.getName());
+            List<Recipe> recipesToUpdate = recipeService.getRecipesByIngredientName(newIngredient.getName());
+            System.out.println("Recipes to update: " + recipesToUpdate.toString());
+
+            // Update the ingredientList of each recipe
+            for (Recipe recipe : recipesToUpdate) {
+                List<String> updatedIngredientList = new ArrayList<>(recipe.getIngredientList()); // Create a new list to avoid modifying the original
+                updatedIngredientList.remove(newIngredient.getName());
+                recipe.setIngredientList(updatedIngredientList);
+            }
+
+            // Save the updated recipes
+            recipeService.saveRecipes(recipesToUpdate);
+
             ingredientService.delete(existingIngredient.get());
             return "redirect:/ingredients/fruit";
         } else {

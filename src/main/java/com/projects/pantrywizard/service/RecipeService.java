@@ -15,4 +15,10 @@ public interface RecipeService {
 
 
     List<Ingredient> getIngredientsInRecipe();
+
+    boolean isIngredientUsedInRecipe(String ingredientName);
+
+    List<Recipe> getRecipesByIngredientName(String name);
+
+    void saveRecipes(List<Recipe> recipesToUpdate);
 }

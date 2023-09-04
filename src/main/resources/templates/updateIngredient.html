@@ -157,7 +157,7 @@
                 <div class="col-md-3"
                      style="background-color: #011638;
              padding-top: 35px;
-             height: 660px;
+             height: 735px;
 
              min-width: 400px;
              max-width: 800px;">
@@ -217,12 +217,16 @@
 
 
                     </form>
+
                     <form th:action="@{/deleteIngredient}" th:object="${ingredient}" method="post" style="text-align: center">
+                        <p style="padding-top: 1px; color: #eec643"><i class="fas fa-triangle-exclamation"></i>&nbsp; If ingredient is in a recipe, it will be removed
+                            <br>from the recipe when deleted!</p>
                         <input type="hidden" th:field="*{ingredient_id}" />
                         <a href="/deleteIngredient">
                             <button type="submit" class="btn btn-outline-warning">Delete Ingredient</button>
 
                         </a>
+
                     </form>
 
                 </div>
@@ -236,7 +240,7 @@
 </div>
 
 <div class="container-fluid border, text-center" >
-    <div class="row" style="height: 175px; background-color: #F2F4FF">
+    <div class="row" style="height: 275px; background-color: #F2F4FF">
 
     </div>
 </div>
