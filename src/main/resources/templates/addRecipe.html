@@ -237,30 +237,6 @@
                         </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px; padding-top: 10px">
                             <label for="calories" style="justify-self: left; padding-bottom: 7px; color: #eec643">Calories</label>
                             <input type="number" th:field="*{calories}" class="form-control" id="calories" aria-describedby="emailHelp" placeholder="0" required min="0">
@@ -314,73 +290,125 @@
             </div>
         </div>
 
-        <div class="container-fluid border, text-center" style="background-color: #F2F4FF;" >
-            <div id="ingredientContainer">
-
-            </div>
-
-
-            <div class="row" style="padding: 30px;">
-
-
-
-
-            </div>
-        </div></div>
-
-    </div>
-</div>
-
-
-
-<div class="container-fluid border, text-center" >
-    <div class="row" style="height: 175px; background-color: #F2F4FF">
-
-    </div>
-</div>
+        <div class="container-fluid" style="background-color: #F2F4FF; padding-top: 25px; padding-bottom: 100px">
+            <table class="table table-bordered border-primary table-hover" id="ingredientTable" style="width: 650px; margin-left: auto; margin-right: auto;">
+                <thead style="background-color: #011638; border-color: #011638">
+                <tr>
+                    <th style="color: #eec643">Ingredient Name</th>
+                    <th style="color: #eec643">Calories</th>
+                    <th style="color: #eec643">Price</th>
+                    <th style="color: #eec643">Category</th>
+                    <th style="color: #eec643">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Table rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
 
 
+        <script>
+            $(document).ready(function () {
+                // Handle the form submission when adding an ingredient
+                $("#addIngredientButton").click(function () {
+
+                    // Get the selected category and ingredient
+                    var selectedCategory = $("#categorySelect").val();
+                    var selectedIngredient = $("#ingredientSelect").val();
+
+                    // Send an AJAX POST request to add the ingredient
+                    $.ajax({
+                        type: "POST",
+                        url: "/addIngredientToRecipe",
+                        data: {
+                            category: selectedCategory,
+                            ingredient: selectedIngredient
+                        },
+                        success: function (response) {
+                            // Update the table with the new ingredient row
+                            $("#ingredientTable tbody").append(response);
+
+                            // Clear the ingredient selection form
+                            $("#categorySelect").val("");
+                            $("#ingredientSelect").val("");
+                        }
+                    });
+                });
+
+                // Handle the click event to remove an ingredient row
+                $(document).on("click", "button.removeIngredient", function () {
+                    // Remove the ingredient row from the table
+                    $(this).closest("tr").remove();
+                });
+            });
+        </script>
 
 
 
-<div class="container-fluid border, text-center" style="background-color: #F2F4FF; padding-top: 750px;">
+        <div class="container-fluid border, text-center" style="background-color: #F2F4FF; padding-top: 50px;">
 
 
-    <div class="row" style="height: 125px">
-        <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
+            <div class="row" style="height: 125px">
+                <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
 
-            <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
-                Pantry
-                <i class="fas fa-hat-wizard"
-                   style="scale: 300%;
+                    <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
+                        Pantry
+                        <i class="fas fa-hat-wizard"
+                           style="scale: 300%;
                                padding-top: 8px;
 
                                padding-left: 12px;
                                color: #0d6efd;
                                padding-right: 10px">
-                </i>
-                Wizard
+                        </i>
+                        Wizard
 
+                    </div>
+
+
+                </div>
             </div>
 
 
+
+
+            <!-- These two lines are used to install Bootstrap dependencies -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+                    crossorigin="anonymous"
+            ></script>
+
+
+
+
+
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
-
-
-
-
-    <!-- These two lines are used to install Bootstrap dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-            crossorigin="anonymous"
-    ></script>
-
-
-
-
-
 </div>
+
+
+
+
+
+
+
+
+
+
 </body>
 
 

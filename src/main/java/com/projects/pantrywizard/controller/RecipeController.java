@@ -180,6 +180,24 @@ public class RecipeController {
         return "addRecipe";
     }
 
+    @PostMapping("/addIngredientToRecipe")
+    public ResponseEntity<String> addIngredientToRecipe(@RequestParam String category, @RequestParam String ingredient, Model model) {
+
+        Ingredient newIngredient = ingredientRepository.findByName(ingredient);
+
+        String newIngredientRow = "<tr>" +
+                "<td>" + newIngredient.getName() + "</td>" +
+                "<td>" + newIngredient.getCalories() + "</td>" +
+                "<td>" + newIngredient.getPrice() + "</td>" +
+                "<td>" + newIngredient.getCategory() + "</td>" +
+                "<td><button class='btn btn-primary removeIngredient'>Remove</button></td>" +
+                "</tr>";
+
+        // Return the HTML as a response entity
+        return ResponseEntity.ok(newIngredientRow);
+
+    }
+
 
 
 
