@@ -210,14 +210,36 @@ public class RecipeController {
 
         recipe.setIngredientList(placeholderList);
 
-        recipeService.saveRecipe(recipe);
 
-        String category = recipe.getCategory().toLowerCase();
+        String category = recipe.getCategory();
 
-        System.out.println("Category: " + category);
+        System.out.println("Raw category: " + category);
 
 
-        return "redirect:/recipes/" + category;
+
+        if (category.contains("Breakfast") || category.contains("Lunch") || category.contains("Dinner") ||
+        category.contains("Appetizers") || category.contains("Dessert")) {
+
+            String[] parts = category.split(",");
+
+            String fixedCategory = parts[1];
+
+            System.out.println("Fixed Category: " + fixedCategory);
+
+
+            recipe.setCategory(fixedCategory);
+
+            recipeService.saveRecipe(recipe);
+
+
+            String lowercaseCategory = recipe.getCategory().toLowerCase();
+
+            System.out.println("Lowercase Category: " + lowercaseCategory);
+
+
+            return "redirect:/recipes/" + lowercaseCategory;
+        }
+        return "redirect:/recipes";
 
     }
 
