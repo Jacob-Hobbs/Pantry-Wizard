@@ -13,5 +13,6 @@ public interface RecipeService {
 
     List<Recipe> getRecipesByCategory(String category);
 
+
     List<Ingredient> getIngredientsInRecipe();
 }

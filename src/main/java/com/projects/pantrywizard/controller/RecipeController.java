@@ -198,6 +198,29 @@ public class RecipeController {
 
     }
 
+    @PostMapping("/addRecipe")
+    public String addRecipe(@ModelAttribute("recipe") Recipe recipe, Model model, @RequestParam("selectedIngredients") List<String> selectedIngredients) {
+
+        List<String> placeholderList = new ArrayList<>();
+
+        placeholderList.addAll(selectedIngredients);
+
+        System.out.println("selectedIngredients: " + selectedIngredients);
+        System.out.println("placeholderlist: " + placeholderList);
+
+        recipe.setIngredientList(placeholderList);
+
+        recipeService.saveRecipe(recipe);
+
+        String category = recipe.getCategory().toLowerCase();
+
+        System.out.println("Category: " + category);
+
+
+        return "redirect:/recipes/" + category;
+
+    }
+
 
 
 
