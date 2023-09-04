@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RecipeServiceImpl implements RecipeService{
@@ -50,5 +51,10 @@ public class RecipeServiceImpl implements RecipeService{
     @Override
     public void saveRecipes(List<Recipe> recipesToUpdate) {
         recipeRepository.saveAll(recipesToUpdate);
+    }
+
+    @Override
+    public Optional<Recipe> getRecipeById(Integer recipeId) {
+        return recipeRepository.findById(recipeId);
     }
 }

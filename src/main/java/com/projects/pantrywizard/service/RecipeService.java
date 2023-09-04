@@ -5,6 +5,7 @@ import com.projects.pantrywizard.entity.Recipe;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public interface RecipeService {
@@ -21,4 +22,6 @@ public interface RecipeService {
     List<Recipe> getRecipesByIngredientName(String name);
 
     void saveRecipes(List<Recipe> recipesToUpdate);
+
+    Optional<Recipe> getRecipeById(Integer recipeId);
 }

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jacob Hobbs">
+    <meta name="description" content="This page contains the start of the Pantry Wizard web page.">
+    <title>Pantry Wizard</title>
+    <!-- how to add icon to web page tab: -->
+    <link rel="icon" th:href="@{/hat5.png}" type="image/fruit">
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous"
+    />
+
+    <style>
+
+        [class*="topRow"] {
+            padding: 1rem;
+            background-color: #011638;
+            color: #fff;
+        }
+        [class*="col2"] {
+            padding: 1rem;
+            background-color: #F2F4FF;
+            border: 2px solid #F2F4FF;
+        }
+        [class*="col3"] {
+            background-color: #F2F4FF;
+            border: 2px solid #F2F4FF;
+            color: #F2F4FF;
+        }
+
+
+    </style>
+
+    <title>font awesome icons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
+
+    <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+
+
+</head>
+
+<body>
+
+
+
+<div class="container-fluid border, text-center" style="background-color: #F2F4FF">
+
+
+
+
+    <div class="row" style="height: 125px">
+        <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
+            <a href="/ingredients">
+                <i class="fas fa-hat-wizard"
+                   style="scale: 300%;
+                       padding-top: 13px;
+                        color: #0d6efd;
+                        padding-right: 10px">
+                </i>
+            </a>
+            Pantry Wizard
+            <a href="/ingredients/fruit">
+                <button class="btn btn-primary" style="font-family: sans-serif"><i class="fas fa-fish"></i> | Ingredients</button>
+            </a>
+
+            <a href="/recipes/breakfast">
+                <button class="btn btn-primary" style="font-family: sans-serif"><i class="fas fa-book"></i> | Recipes</button>
+            </a>
+            <a href="/login">
+                <button class="btn btn-primary" style="font-family: sans-serif"><i class="fas fa-power-off"></i> | Log Out</button>
+            </a>
+        </div>
+    </div>
+    <div class="container-fluid border, text-center">
+        <div class="text-center">
+            <div class="col2">
+                <a href="/recipes/breakfast">
+                    <button class="btn btn-primary" ><i class="fas fa-bacon"></i>  Breakfast</button>
+                </a>
+                <a href="/recipes/lunch">
+                    <button class="btn btn-primary"><i class="fas fa-burger"></i>  Lunch</button>
+                </a>
+                <a href="/recipes/dinner">
+                    <button class="btn btn-primary"><i class="fas fa-shrimp"></i>  Dinner</button>
+                </a>
+            </div>
+        </div>
+        <div class="text-center" style="padding-bottom: 15px">
+            <div class="col3">
+                <a href="/recipes/appetizers">
+                    <button class="btn btn-primary"><i class="fas fa-champagne-glasses"></i>  Appetizers</button>
+                </a>
+                <a href="/recipes/dessert">
+                    <button class="btn btn-primary"><i class="fas fa-ice-cream"></i>  Dessert</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+<div class="container-fluid border, text-center" >
+    <div class="row" style="height: 50px; background-color: #F2F4FF">
+
+    </div>
+</div>
+
+<div class="container-fluid border-0" style="padding-bottom: 150px; background-color: #F2F4FF">
+    <div class="row" style="height: 300px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                </div>
+                <div class="col-md-3"
+                     style="background-color: #011638;
+             padding-top: 35px;
+             height: 910px;
+
+             min-width: 400px;
+             max-width: 800px;">
+                    <form th:action="@{/addRecipe}" th:object="${recipe}" method="post" class="addRecipeForm">
+
+
+
+
+
+
+
+
+
+
+                        <div>
+                            <p style="padding-bottom: 5px; text-align: center; color: #eec643; font-size: 24px;">New Recipe:</p>
+                        </div>
+                        <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
+                            <label for="name" style="justify-self: left; padding-bottom: 7px; color: #eec643">Name</label>
+                            <input type="text" th:field="*{name}"  class="form-control" id="name" aria-describedby="emailHelp" placeholder="Salt" required maxlength="25">
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="box mx-auto" style="border: 2px solid #eec643; padding-top: 10px; width: 325px;">
+                            <h6 style="padding-left: 25px; color: #eec643; padding-top: 10px">Add Ingredients to Recipe</h6>
+                            <div class="form-group" style="padding-bottom: 10px; padding-left: 50px; padding-right: 50px;">
+                                <label for="categorySelect" style="justify-self: left; padding-bottom: 7px; color: #0d6efd; font-size: 14px">Choose Ingredient Category</label>
+                                <select class="form-select" id="categorySelect" name="category" required>
+                                    <option selected disabled value="">Select a category</option>
+                                    <option value="Fruit">Fruit</option>
+                                    <option value="Vegetable">Vegetable</option>
+                                    <option value="Dairy">Dairy</option>
+                                    <option value="Protein">Protein</option>
+                                    <option value="Grains">Grains</option>
+                                    <option value="Herbs & Spices">Herbs & Spices</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid category.
+                                </div>
+                            </div>
+                            <div class="form-group" style="padding-bottom: 25px; padding-left: 50px; padding-right: 50px;">
+                                <label for="ingredientSelect" style="justify-self: left; padding-bottom: 7px; color: #0d6efd; font-size: 14px">Choose Ingredient</label>
+                                <select class="form-select" id="ingredientSelect" name="ingredient" required>
+                                    <option selected disabled value="">Select an ingredient</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid ingredient.
+                                </div>
+                            </div>
+                            <div class="form-group" style="padding-bottom: 25px; text-align: center">
+
+                                <input type="hidden" name="selectedIngredients" id="selectedIngredients" value="">
+                                <button type="button" class="btn btn-primary" id="addIngredientButton">Add Ingredient</button>
+
+                            </div>
+                        </div>
+
+
+
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            $(document).ready(function () {
+                                // Get references to the first and second select forms
+                                var categorySelect = $("#categorySelect");
+                                var ingredientSelect = $("#ingredientSelect");
+
+                                // Event listener for changes in the category select form
+                                categorySelect.on("change", function () {
+                                    // Clear existing options in the ingredient select form
+                                    ingredientSelect.empty();
+
+                                    // Get the selected category
+                                    var selectedCategory = $(this).val();
+
+                                    // Make an AJAX request to fetch ingredients for the selected category
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/getIngredientsByCategory", // Replace with your endpoint
+                                        data: { category: selectedCategory },
+                                        success: function (data) {
+                                            // Populate the ingredient select form with fetched data
+                                            data.forEach(function (ingredient) {
+                                                ingredientSelect.append(
+                                                    $("<option></option>")
+                                                        .attr("value", ingredient)
+                                                        .text(ingredient)
+                                                );
+                                            });
+                                        },
+                                        error: function (error) {
+                                            console.error("Error fetching ingredients: " + error);
+                                        },
+                                    });
+                                });
+                            });
+                        </script>
+
+
+                        <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px; padding-top: 10px">
+                            <label for="totalCalories" style="justify-self: left; padding-bottom: 7px; color: #eec643">Calories</label>
+                            <input type="number" th:field="*{calories}" class="form-control" id="totalCalories" aria-describedby="emailHelp" placeholder="0" required min="0" readonly>
+                        </div>
+
+                        <script>
+                            function calculateTotalCalories() {
+                                let totalCalories = 0;
+
+                                // Iterate through each table row and sum the calories column
+                                document.querySelectorAll("#ingredientTable tbody tr").forEach((row) => {
+                                    const caloriesCell = row.cells[1]; // Assuming calories are in the second column
+                                    totalCalories += parseInt(caloriesCell.textContent);
+                                });
+
+                                // Update the totalCalories input field
+                                document.getElementById("totalCalories").value = totalCalories;
+                            }
+
+                            // Call the function to calculate the initial total calories
+                            calculateTotalCalories();
+
+                        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
+                            <label for="price" style="justify-self: left; padding-bottom: 7px; color: #eec643">Price</label>
+                            <input type="number" th:field="*{price}" class="form-control" id="price" aria-describedby="emailHelp" placeholder="1.99" required step="0.01" min="0">
+
+                        </div>
+                        <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
+                            <label for="image" style="justify-self: left; padding-bottom: 7px; color: #eec643">Image URL</label>
+                            <input type="text" th:field="*{imageURL}" class="form-control" id="image" placeholder="www.images/salt.png" required>
+                        </div>
+
+                        <div class="form-group" style="padding-bottom: 35px; padding-left: 50px; padding-right: 50px;">
+                            <label for="category" style="justify-self: left; padding-bottom: 7px; color: #eec643">Category</label>
+                            <select class="form-select" id="category" name="category" required>
+                                <option th:each="category : ${recipe.category}"
+                                        th:value="${category}"
+                                        th:text="${category}"
+                                        th:selected="${category == recipe.category}" disabled></option>
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Lunch">Lunch</option>
+                                <option value="Dinner">Dinner</option>
+                                <option value="Appetizers">Appetizers</option>
+                                <option value="Dessert">Dessert</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid category.
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="padding-bottom: 15px; text-align: center">
+                            <a href="index.html">
+                                <input type="hidden" id="ingredientNames" name="ingredientNames" />
+                                <button type="submit" class="btn btn-primary" >Submit</button>
+                            </a>
+                        </div>
+
+
+                    </form>
+
+                </div>
+                <div class="col-md">
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid border, text-center" style="background-color: #F2F4FF; padding-top: 25px">
+            <div class="row " style="text-align: center">
+                <div class="col-md-12" style="background-color: #011638">
+                    <h2 style="text-align: center; color: #eec643; padding-top: 5px">Ingredients:</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" style="background-color: #F2F4FF; padding-top: 25px; padding-bottom: 100px">
+            <table class="table table-bordered border-primary table-hover" id="ingredientTable" style="width: 650px; margin-left: auto; margin-right: auto;">
+                <thead style="background-color: #011638; border-color: #011638">
+                <tr>
+                    <th style="color: #eec643">Ingredient Name</th>
+                    <th style="color: #eec643">Calories</th>
+                    <th style="color: #eec643">Price</th>
+                    <th style="color: #eec643">Category</th>
+                    <th style="color: #eec643">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Table rows will be dynamically added here -->
+                <tr th:each="ingredient : ${ingredients}">
+                    <td th:text="${ingredient.name}"></td>
+                    <td th:text="${ingredient.calories}"></td>
+                    <td th:text="${ingredient.price}"></td>
+                    <td th:text="${ingredient.category}"></td>
+                    <td>
+                        <button class="btn btn-primary removeIngredient">
+                            Remove
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <script>
+
+
+            $(document).ready(function () {
+
+                var ingredientNamesArray = [];
+                calculateTotalCalories();
+
+
+                // Handle the form submission when adding an ingredient
+                $("#addIngredientButton").click(function () {
+
+                    // Get the selected category and ingredient
+                    var selectedCategory = $("#categorySelect").val();
+                    var selectedIngredient = $("#ingredientSelect").val();
+
+                    // Send an AJAX POST request to add the ingredient
+                    $.ajax({
+                        type: "POST",
+                        url: "/addIngredientToRecipe",
+                        data: {
+                            category: selectedCategory,
+                            ingredient: selectedIngredient
+                        },
+                        success: function (response) {
+                            // Update the table with the new ingredient row
+                            $("#ingredientTable tbody").append(response);
+                            ingredientNamesArray.push(selectedIngredient);
+                            calculateTotalCalories();
+                            document.getElementById("ingredientNames").value = ingredientNamesArray.join(", ");
+
+                            // Clear the ingredient selection form
+                            $("#categorySelect").val("");
+                            $("#ingredientSelect").val("");
+                        }
+                    });
+                });
+
+                // Handle the click event to remove an ingredient row
+                $(document).on("click", "button.removeIngredient", function () {
+
+                    var removedIngredient = $(this).closest("tr").find("td:first").text().trim();
+
+                    // Remove the ingredient from the array
+                    ingredientNamesArray = ingredientNamesArray.filter(function (name) {
+                        return name !== removedIngredient;
+                    });
+
+                    // Update the hidden input field's value with updated ingredient names
+                    $("#ingredientNames").val(ingredientNamesArray.join(", "));
+
+                    // Remove the ingredient row from the table
+                    $(this).closest("tr").remove();
+                    calculateTotalCalories();
+                });
+            });
+
+        </script>
+
+
+
+        <div class="container-fluid border, text-center" style="background-color: #F2F4FF; padding-top: 50px;">
+
+
+            <div class="row" style="height: 125px">
+                <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
+
+                    <div class="topRow" style="color: #eec643; font-family:'magneto'; font-size: 30px">
+                        Pantry
+                        <i class="fas fa-hat-wizard"
+                           style="scale: 300%;
+                               padding-top: 8px;
+
+                               padding-left: 12px;
+                               color: #0d6efd;
+                               padding-right: 10px">
+                        </i>
+                        Wizard
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+            <!-- These two lines are used to install Bootstrap dependencies -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+                    crossorigin="anonymous"
+            ></script>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
+

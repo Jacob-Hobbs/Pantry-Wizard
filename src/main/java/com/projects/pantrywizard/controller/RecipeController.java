@@ -16,10 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 @Controller
 @RequestMapping("/")
@@ -235,6 +232,35 @@ public class RecipeController {
         }
         return "redirect:/recipes";
 
+    }
+
+    @GetMapping("/updateRecipe")
+    public String updateRecipePage(@RequestParam("recipe_id") Integer recipe_id, Model model) {
+
+
+        Optional<Recipe> recipe = recipeService.getRecipeById(recipe_id);
+
+        if (recipe.isPresent()) {
+            Recipe recipeEntity = recipe.get();
+            model.addAttribute("recipe", recipeEntity);
+
+            List<String> ingredientNamesList = recipeEntity.getIngredientList();
+
+            List<Ingredient> ingredients = ingredientService.getIngredientsByName(ingredientNamesList);
+
+            System.out.println(ingredients.toString());
+
+            //for (Ingredient ingredient: ingredients) {
+                model.addAttribute("ingredients", ingredients);
+            //}
+
+
+            //List<Ingredient> ingredients = ingredientService.getAllIngredients();
+
+
+        }
+
+        return "updateRecipe";
     }
 
 

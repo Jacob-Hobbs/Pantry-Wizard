@@ -2,6 +2,7 @@ package com.projects.pantrywizard.service;
 
 import com.projects.pantrywizard.dao.IngredientRepository;
 import com.projects.pantrywizard.entity.Ingredient;
+import com.projects.pantrywizard.entity.Recipe;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -89,6 +90,26 @@ public class IngredientServiceImpl implements IngredientService {
 
             return ingredient.getImageURL();
 
+    }
+
+    @Override
+    public Ingredient getIngredientByNameTwo(String ingredientName) {
+        return ingredientRepository.findByName(ingredientName);
+    }
+
+    @Override
+    public Ingredient getIngredientDetails(String ingredientName) {
+        return ingredientRepository.findByName(ingredientName);
+    }
+
+    @Override
+    public List<Ingredient> getAllIngredients() {
+        return ingredientRepository.findAll();
+    }
+
+    @Override
+    public List<Ingredient> getIngredientsByName(List<String> ingredientNamesList) {
+        return ingredientRepository.findByNameIn(ingredientNamesList);
     }
 
 

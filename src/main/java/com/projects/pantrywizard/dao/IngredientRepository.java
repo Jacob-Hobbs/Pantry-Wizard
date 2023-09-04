@@ -17,4 +17,6 @@ public interface IngredientRepository extends JpaRepository<Ingredient, Integer>
 
     @Query("SELECT i.name FROM Ingredient i WHERE i.name LIKE %:name%")
     List<String> findIngredientNamesByNames(String name);
+
+    List<Ingredient> findByNameIn(List<String> ingredientNamesList);
 }

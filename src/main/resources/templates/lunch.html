@@ -164,16 +164,18 @@
 
             <div class="col-md-2 mb-5" th:each="lunch, rowStat : ${lunchs}">
 
+                <a th:href="@{/updateRecipe(recipe_id=${lunch.recipe_Id})}">
+                    <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
+                        <img th:src="${lunch.imageURL}"
+                             style="max-height: 200px; max-width: 200px;"
 
-                <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                    <img th:src="${lunch.imageURL}"
-                         style="max-height: 200px; max-width: 200px;"
-
-                         class="card-img-top" alt="Recipe Image" />
-                    <div class="card-body">
-                        <h6 class="card-title" th:text="${lunch.name}">Apple</h6>
+                             class="card-img-top" alt="Recipe Image" />
+                        <div class="card-body">
+                            <h6 class="card-title" th:text="${lunch.name}">Apple</h6>
+                        </div>
                     </div>
-                </div>
+                </a>
+
 
 
             </div>

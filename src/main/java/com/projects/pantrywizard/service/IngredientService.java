@@ -1,6 +1,7 @@
 package com.projects.pantrywizard.service;
 
 import com.projects.pantrywizard.entity.Ingredient;
+import com.projects.pantrywizard.entity.Recipe;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,4 +28,12 @@ public interface IngredientService {
     List<String> getIngredientsByCategoryString(String selectedCategory);
 
     public String getImageURLByName(String ingredientName);
+
+    Ingredient getIngredientByNameTwo(String ingredientName);
+
+    Ingredient getIngredientDetails(String ingredientName);
+
+    List<Ingredient> getAllIngredients();
+
+    List<Ingredient> getIngredientsByName(List<String> ingredientNamesList);
 }
