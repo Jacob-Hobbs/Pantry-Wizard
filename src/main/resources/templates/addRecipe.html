@@ -149,7 +149,7 @@
                 <div class="col-md-3"
                      style="background-color: #011638;
              padding-top: 35px;
-             height: 850px;
+             height: 910px;
 
              min-width: 400px;
              max-width: 800px;">
@@ -161,6 +161,9 @@
                             <label for="name" style="justify-self: left; padding-bottom: 7px; color: #eec643">Name</label>
                             <input type="text" th:field="*{name}"  class="form-control" id="name" aria-describedby="emailHelp" placeholder="Salt" required maxlength="25">
                         </div>
+
+
+
 
 
 
@@ -179,7 +182,7 @@
                                     Please select a valid category.
                                 </div>
                             </div>
-                            <div class="form-group" style="padding-bottom: 35px; padding-left: 50px; padding-right: 50px;">
+                            <div class="form-group" style="padding-bottom: 25px; padding-left: 50px; padding-right: 50px;">
                                 <label for="ingredientSelect" style="justify-self: left; padding-bottom: 7px; color: #0d6efd; font-size: 14px">Choose Ingredient</label>
                                 <select class="form-select" id="ingredientSelect" name="ingredient" required>
                                     <option selected disabled value="">Select an ingredient</option>
@@ -187,6 +190,11 @@
                                 <div class="invalid-feedback">
                                     Please select a valid ingredient.
                                 </div>
+                            </div>
+                            <div class="form-group" style="padding-bottom: 25px; text-align: center">
+                                <a href="index.html">
+                                    <button type="submit" class="btn btn-primary" id="addIngredientButton">Add Ingredient</button>
+                                </a>
                             </div>
                         </div>
 
@@ -307,26 +315,16 @@
         </div>
 
         <div class="container-fluid border, text-center" style="background-color: #F2F4FF;" >
+            <div id="ingredientContainer">
+
+            </div>
 
 
             <div class="row" style="padding: 30px;">
 
 
-                <div class="col-md-2 mb-5" th:each="breakfast, rowStat : ${breakfasts}">
 
 
-                    <div class="card ripple" data-mdb-ripple-color="#0D6EFDFF">
-                        <img th:src="${breakfast.imageURL}"
-                             style="max-height: 200px; max-width: 200px;"
-
-                             class="card-img-top" alt="Recipe Image" />
-                        <div class="card-body">
-                            <h6 class="card-title" th:text="${breakfast.name}">Apple</h6>
-                        </div>
-                    </div>
-
-
-                </div>
             </div>
         </div></div>
 

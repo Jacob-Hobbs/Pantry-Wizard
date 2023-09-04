@@ -70,7 +70,6 @@ public class IngredientServiceImpl implements IngredientService {
     public List<String> getIngredientsByCategoryString(String selectedCategory) {
         System.out.println(selectedCategory);
 
-
         List<Ingredient> ingredientArrayList = ingredientRepository.findByCategory(selectedCategory);
 
         List<String> ingredientNameList = new ArrayList<>();
@@ -81,8 +80,15 @@ public class IngredientServiceImpl implements IngredientService {
 
         System.out.println(ingredientNameList);
 
-
         return ingredientNameList;
+    }
+
+    @Override
+    public String getImageURLByName(String ingredientName) {
+        Ingredient ingredient = ingredientRepository.findByName(ingredientName);
+
+            return ingredient.getImageURL();
+
     }
 
 

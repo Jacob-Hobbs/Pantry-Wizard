@@ -25,4 +25,6 @@ public interface IngredientService {
     List<String> getAllCategories();
 
     List<String> getIngredientsByCategoryString(String selectedCategory);
+
+    public String getImageURLByName(String ingredientName);
 }
