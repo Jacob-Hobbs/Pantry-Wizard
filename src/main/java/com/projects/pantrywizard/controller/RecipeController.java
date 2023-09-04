@@ -199,22 +199,16 @@ public class RecipeController {
     }
 
     @PostMapping("/addRecipe")
-    public String addRecipe(@ModelAttribute("recipe") Recipe recipe, Model model, @RequestParam("selectedIngredients") List<String> selectedIngredients) {
+    public String addRecipe(@ModelAttribute("recipe") Recipe recipe, Model model, @RequestParam List<String> ingredientNames) {
 
-        List<String> placeholderList = new ArrayList<>();
+        System.out.println("@@@ Ingredient Names List: " + ingredientNames);
 
-        placeholderList.addAll(selectedIngredients);
-
-        System.out.println("selectedIngredients: " + selectedIngredients);
-        System.out.println("placeholderlist: " + placeholderList);
-
-        recipe.setIngredientList(placeholderList);
+        recipe.setIngredientList(ingredientNames);
 
 
         String category = recipe.getCategory();
 
         System.out.println("Raw category: " + category);
-
 
 
         if (category.contains("Breakfast") || category.contains("Lunch") || category.contains("Dinner") ||

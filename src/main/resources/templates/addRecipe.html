@@ -158,27 +158,7 @@
 
 
 
-                        <script>
-                            document.querySelector("#addRecipeForm").addEventListener("submit", function (event) {
-                                event.preventDefault(); // Prevent the default form submission
 
-                                // Initialize an array to store selected ingredient names
-                                const selectedIngredients = [];
-
-                                // Iterate through table rows to check which ingredients are selected
-                                document.querySelectorAll("#ingredientTable").forEach((row) => {
-
-                                    // The ingredient is selected, add its name to the array
-                                    const ingredientName = row.cells[0].textContent; // Assuming the ingredient name is in the first cell
-                                    selectedIngredients.push(ingredientName);
-
-                                });
-
-                                const selectedIngredientsInput = document.getElementById("selectedIngredients");
-                                selectedIngredientsInput.value = JSON.stringify(selectedIngredients);
-
-                            });
-                        </script>
 
 
 
@@ -354,6 +334,7 @@
 
                         <div class="form-group" style="padding-bottom: 15px; text-align: center">
                             <a href="index.html">
+                                <input type="hidden" id="ingredientNames" name="ingredientNames" />
                                 <button type="submit" class="btn btn-primary" >Submit</button>
                             </a>
                         </div>
@@ -395,7 +376,12 @@
 
 
         <script>
+
+
             $(document).ready(function () {
+
+                var ingredientNamesArray = [];
+
 
                 // Handle the form submission when adding an ingredient
                 $("#addIngredientButton").click(function () {
@@ -415,7 +401,9 @@
                         success: function (response) {
                             // Update the table with the new ingredient row
                             $("#ingredientTable tbody").append(response);
+                            ingredientNamesArray.push(selectedIngredient);
                             calculateTotalCalories();
+                            document.getElementById("ingredientNames").value = ingredientNamesArray.join(", ");
 
                             // Clear the ingredient selection form
                             $("#categorySelect").val("");
@@ -426,6 +414,17 @@
 
                 // Handle the click event to remove an ingredient row
                 $(document).on("click", "button.removeIngredient", function () {
+
+                    var removedIngredient = $(this).closest("tr").find("td:first").text().trim();
+
+                    // Remove the ingredient from the array
+                    ingredientNamesArray = ingredientNamesArray.filter(function (name) {
+                        return name !== removedIngredient;
+                    });
+
+                    // Update the hidden input field's value with updated ingredient names
+                    $("#ingredientNames").val(ingredientNamesArray.join(", "));
+
                     // Remove the ingredient row from the table
                     $(this).closest("tr").remove();
                     calculateTotalCalories();
