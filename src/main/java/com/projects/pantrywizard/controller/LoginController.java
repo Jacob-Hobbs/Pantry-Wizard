@@ -1,19 +1,13 @@
 package com.projects.pantrywizard.controller;
 
 import com.projects.pantrywizard.dao.UserRepository;
-import com.projects.pantrywizard.entity.Ingredient;
 import com.projects.pantrywizard.entity.User;
 import jakarta.annotation.PostConstruct;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.PostLoad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -43,6 +37,11 @@ public class LoginController {
         return "login";
     }
 
+    @GetMapping("/logout")
+    public String logout() {
+        return "redirect:/login";
+    }
+
     @PostMapping("/ingredients/fruit")
     public String loginUser(@ModelAttribute("user") User user) {
 
@@ -68,10 +67,7 @@ public class LoginController {
             returnPage = "loginError";
         }
 
-
         return returnPage;
     }
-
-
 
 }

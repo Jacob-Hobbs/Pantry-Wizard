@@ -33,14 +33,10 @@ public class IngredientController {
 
     // define @PostConstruct to load the sample ingredient data at runtime
     @PostConstruct
-    public void loadSampleData() throws IOException {
-
-        //ingredientRepository.deleteAll();
-
+    public void loadSampleData() {
 
         // Initialize list as empty
         localIngredientList = new ArrayList<>();
-
 
         try (Scanner scanner = new Scanner(Paths.get("C:/Java/pantrywizard/src/main/resources/csv/samples.csv"))){
 
@@ -83,25 +79,6 @@ public class IngredientController {
         return "redirect:/ingredients/" + category;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    //@GetMapping("/ingredients")
-    //public List<Ingredient> sayHello() {
-
-        // Jackson converts our list of Ingredients to a JSON array
-        //return localIngredientList;
-    //}
-
     @GetMapping("/ingredients")
     public String getIngredients(Model model) {
 
@@ -109,8 +86,6 @@ public class IngredientController {
 
         return "index";
     }
-
-
 
     @GetMapping("/ingredients/{ingredientId}")
     public Ingredient getIngredientById(@PathVariable int ingredientId) {
@@ -155,25 +130,6 @@ public class IngredientController {
         return "redirect:/ingredients/" + category;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @PostMapping("/deleteIngredient")
     public String deleteIngredient(@ModelAttribute("ingredient") Ingredient ingredient) {
 
@@ -190,7 +146,7 @@ public class IngredientController {
 
             // Update the ingredientList of each recipe
             for (Recipe recipe : recipesToUpdate) {
-                List<String> updatedIngredientList = new ArrayList<>(recipe.getIngredientList()); // Create a new list to avoid modifying the original
+                List<String> updatedIngredientList = new ArrayList<>(recipe.getIngredientList());
                 updatedIngredientList.remove(newIngredient.getName());
                 recipe.setIngredientList(updatedIngredientList);
             }
@@ -205,11 +161,6 @@ public class IngredientController {
         }
         return "redirect:/ingredients/fruit";
     }
-
-
-
-
-
 
     @GetMapping("/ingredients/fruit")
     public String getFruitIngredients(Model model) {
@@ -228,7 +179,6 @@ public class IngredientController {
         model.addAttribute("fruits", fruits);
         return "fruit";
     }
-
 
     @GetMapping("/ingredients/vegetable")
     public String getVegetableIngredients(Model model) {

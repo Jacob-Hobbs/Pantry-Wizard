@@ -20,20 +20,9 @@ public interface IngredientService {
 
     void delete(Ingredient ingredient);
 
-    List<String> getIngredientByName(String name);
-
-
     List<String> getAllCategories();
 
     List<String> getIngredientsByCategoryString(String selectedCategory);
-
-    public String getImageURLByName(String ingredientName);
-
-    Ingredient getIngredientByNameTwo(String ingredientName);
-
-    Ingredient getIngredientDetails(String ingredientName);
-
-    List<Ingredient> getAllIngredients();
 
     List<Ingredient> getIngredientsByName(List<String> ingredientNamesList);
 }

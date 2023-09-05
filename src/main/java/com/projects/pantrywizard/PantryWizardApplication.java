@@ -10,7 +10,6 @@ public class PantryWizardApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PantryWizardApplication.class, args);
 
-
 	}
 
 }

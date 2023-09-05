@@ -32,18 +32,6 @@ public class RecipeServiceImpl implements RecipeService{
     }
 
     @Override
-    public List<Ingredient> getIngredientsInRecipe() {
-
-
-        return ingredientsInRecipe;
-    }
-
-    @Override
-    public boolean isIngredientUsedInRecipe(String ingredientName) {
-        return recipeRepository.existsByIngredientListContaining(ingredientName);
-    }
-
-    @Override
     public List<Recipe> getRecipesByIngredientName(String name) {
         return recipeRepository.findByIngredientListContaining(name);
     }

@@ -35,9 +35,6 @@ public class UserController {
     public String registerUser(@ModelAttribute("user") User user) {
         System.out.println(user);
 
-
-
-
         userService.registerUser(user);
 
         return "login";

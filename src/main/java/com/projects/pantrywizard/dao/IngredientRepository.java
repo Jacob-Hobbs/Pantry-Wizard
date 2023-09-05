@@ -10,7 +10,6 @@ import java.util.List;
 @Repository
 public interface IngredientRepository extends JpaRepository<Ingredient, Integer> {
 
-
     List<Ingredient> findByCategory(String fruit);
 
     Ingredient findByName(String name);

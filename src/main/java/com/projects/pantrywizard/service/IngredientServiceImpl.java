@@ -46,12 +46,6 @@ public class IngredientServiceImpl implements IngredientService {
     }
 
     @Override
-    public List<String> getIngredientByName(String name) {
-
-        return ingredientRepository.findIngredientNamesByNames(name);
-    }
-
-    @Override
     public List<String> getAllCategories() {
 
         List<String> categoryList = new ArrayList<>();
@@ -82,29 +76,6 @@ public class IngredientServiceImpl implements IngredientService {
         System.out.println(ingredientNameList);
 
         return ingredientNameList;
-    }
-
-    @Override
-    public String getImageURLByName(String ingredientName) {
-        Ingredient ingredient = ingredientRepository.findByName(ingredientName);
-
-            return ingredient.getImageURL();
-
-    }
-
-    @Override
-    public Ingredient getIngredientByNameTwo(String ingredientName) {
-        return ingredientRepository.findByName(ingredientName);
-    }
-
-    @Override
-    public Ingredient getIngredientDetails(String ingredientName) {
-        return ingredientRepository.findByName(ingredientName);
-    }
-
-    @Override
-    public List<Ingredient> getAllIngredients() {
-        return ingredientRepository.findAll();
     }
 
     @Override

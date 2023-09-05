@@ -7,7 +7,6 @@ import com.projects.pantrywizard.entity.Recipe;
 import com.projects.pantrywizard.service.IngredientService;
 import com.projects.pantrywizard.service.RecipeService;
 import jakarta.annotation.PostConstruct;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -39,7 +38,7 @@ public class RecipeController {
     private List<Recipe> localRecipeList;
 
     @PostConstruct
-    public void loadSampleDate() throws IOException {
+    public void loadSampleDate() {
 
         localRecipeList = new ArrayList<>();
 
@@ -296,9 +295,6 @@ public class RecipeController {
 
 
     }
-
-
-
 
     @PostMapping("/deleteRecipe")
     public String deleteRecipe(@ModelAttribute("recipe") Recipe recipe) {

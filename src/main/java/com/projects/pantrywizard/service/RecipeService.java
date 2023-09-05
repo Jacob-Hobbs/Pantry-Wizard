@@ -14,11 +14,6 @@ public interface RecipeService {
 
     List<Recipe> getRecipesByCategory(String category);
 
-
-    List<Ingredient> getIngredientsInRecipe();
-
-    boolean isIngredientUsedInRecipe(String ingredientName);
-
     List<Recipe> getRecipesByIngredientName(String name);
 
     void saveRecipes(List<Recipe> recipesToUpdate);
