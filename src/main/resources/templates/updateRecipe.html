@@ -313,7 +313,7 @@
 
                         <div class="form-group" style="padding-bottom: 15px; text-align: center">
 
-                                <input type="hidden" id="ingredientNames" name="ingredientNames" />
+                                <input type="hidden" id="ingredientNames" name="ingredientNames" th:field="*{ingredientList}" />
                                 <button type="submit" class="btn btn-primary" >Submit</button>
 
                         </div>
@@ -382,6 +382,18 @@
             $(document).ready(function () {
 
                 var ingredientNamesArray = [];
+
+                function updateIngredientNamesArray() {
+                    ingredientNamesArray = [];
+                    $("#ingredientTable tbody tr").each(function () {
+                        var ingredientName = $(this).find("td:first").text().trim();
+                        ingredientNamesArray.push(ingredientName);
+                    });
+                    // Update the hidden input field's value
+                    document.getElementById("ingredientNames").value = ingredientNamesArray.join(", ");
+                }
+                updateIngredientNamesArray();
+
                 calculateTotalCalories();
 
 
@@ -412,6 +424,7 @@
                             $("#ingredientSelect").val("");
                         }
                     });
+                    updateIngredientNamesArray();
                 });
 
                 // Handle the click event to remove an ingredient row
@@ -429,6 +442,7 @@
 
                     // Remove the ingredient row from the table
                     $(this).closest("tr").remove();
+                    updateIngredientNamesArray();
                     calculateTotalCalories();
                 });
             });

@@ -278,8 +278,11 @@ public class RecipeController {
         oldRecipe.setName(updatedRecipe.getName());
         oldRecipe.setCalories(updatedRecipe.getCalories());
         oldRecipe.setPrice(updatedRecipe.getPrice());
-
         oldRecipe.setCategory(updatedRecipe.getCategory());
+        oldRecipe.setImageURL(updatedRecipe.getImageURL());
+
+        // update ingredientList
+        oldRecipe.setIngredientList(updatedRecipe.getIngredientList());
 
 
             recipeService.updateRecipe(oldRecipe);
