@@ -26,4 +26,6 @@ public interface RecipeService {
     Optional<Recipe> getRecipeById(Integer recipeId);
 
     void updateRecipe(Recipe updatedRecipe);
+
+    void delete(Recipe newRecipe);
 }

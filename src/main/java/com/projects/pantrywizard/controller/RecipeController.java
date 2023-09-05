@@ -297,6 +297,26 @@ public class RecipeController {
 
 
 
+    @PostMapping("/deleteRecipe")
+    public String deleteRecipe(@ModelAttribute("recipe") Recipe recipe) {
+
+        Optional<Recipe> existingRecipe = recipeService.getRecipeById(recipe.getRecipe_Id());
+
+        if (existingRecipe.isPresent()) {
+
+            Recipe newRecipe = existingRecipe.get();
+
+            recipeService.delete(newRecipe);
+            return "redirect:/recipes/breakfast";
+        } else {
+            System.out.println("Recipe not found!!");
+        }
+        return "redirect:/recipes/breakfast";
+    }
+
+
+
+
 
 
 

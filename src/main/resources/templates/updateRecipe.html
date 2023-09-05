@@ -149,7 +149,7 @@
                 <div class="col-md-3"
                      style="background-color: #011638;
              padding-top: 35px;
-             height: 910px;
+             height: 980px;
 
              min-width: 400px;
              max-width: 800px;">
@@ -319,6 +319,17 @@
                         </div>
 
 
+
+
+
+                    </form>
+                    <form th:action="@{/deleteRecipe}" th:object="${recipe}" method="post" style="text-align: center; padding-top: 15px">
+
+                        <input type="hidden" th:field="*{recipe_Id}" />
+                        <a href="/deleteRecipe">
+                            <button type="submit" class="btn btn-outline-warning" >Delete Recipe</button>
+
+                        </a>
 
                     </form>
 
