@@ -57,4 +57,9 @@ public class RecipeServiceImpl implements RecipeService{
     public Optional<Recipe> getRecipeById(Integer recipeId) {
         return recipeRepository.findById(recipeId);
     }
+
+    @Override
+    public void updateRecipe(Recipe updatedRecipe) {
+        recipeRepository.save(updatedRecipe);
+    }
 }

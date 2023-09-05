@@ -153,7 +153,7 @@
 
              min-width: 400px;
              max-width: 800px;">
-                    <form th:action="@{/addRecipe}" th:object="${recipe}" method="post" class="addRecipeForm">
+                    <form th:action="@{/updateRecipe}" th:object="${recipe}" method="post" class="addRecipeForm">
 
 
 
@@ -190,7 +190,7 @@
                             <h6 style="padding-left: 25px; color: #eec643; padding-top: 10px">Add Ingredients to Recipe</h6>
                             <div class="form-group" style="padding-bottom: 10px; padding-left: 50px; padding-right: 50px;">
                                 <label for="categorySelect" style="justify-self: left; padding-bottom: 7px; color: #0d6efd; font-size: 14px">Choose Ingredient Category</label>
-                                <select class="form-select" id="categorySelect" name="category" required>
+                                <select class="form-select" id="categorySelect" name="ingredientCategory" required>
                                     <option selected disabled value="">Select a category</option>
                                     <option value="Fruit">Fruit</option>
                                     <option value="Vegetable">Vegetable</option>
@@ -287,26 +287,6 @@
                         </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <div class="form-group" style="padding-bottom: 15px; padding-left: 50px; padding-right: 50px;">
                             <label for="price" style="justify-self: left; padding-bottom: 7px; color: #eec643">Price</label>
                             <input type="number" th:field="*{price}" class="form-control" id="price" aria-describedby="emailHelp" placeholder="1.99" required step="0.01" min="0">
@@ -320,15 +300,11 @@
                         <div class="form-group" style="padding-bottom: 35px; padding-left: 50px; padding-right: 50px;">
                             <label for="category" style="justify-self: left; padding-bottom: 7px; color: #eec643">Category</label>
                             <select class="form-select" id="category" name="category" required>
-                                <option th:each="category : ${recipe.category}"
-                                        th:value="${category}"
-                                        th:text="${category}"
-                                        th:selected="${category == recipe.category}" disabled></option>
-                                <option value="Breakfast">Breakfast</option>
-                                <option value="Lunch">Lunch</option>
-                                <option value="Dinner">Dinner</option>
-                                <option value="Appetizers">Appetizers</option>
-                                <option value="Dessert">Dessert</option>
+                                <option value="Breakfast" th:selected="${recipe.category == 'Breakfast'}">Breakfast</option>
+                                <option value="Lunch" th:selected="${recipe.category == 'Lunch'}">Lunch</option>
+                                <option value="Dinner" th:selected="${recipe.category == 'Dinner'}">Dinner</option>
+                                <option value="Appetizers" th:selected="${recipe.category == 'Appetizers'}">Appetizers</option>
+                                <option value="Dessert" th:selected="${recipe.category == 'Dessert'}">Dessert</option>
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid category.
@@ -336,11 +312,12 @@
                         </div>
 
                         <div class="form-group" style="padding-bottom: 15px; text-align: center">
-                            <a href="index.html">
+
                                 <input type="hidden" id="ingredientNames" name="ingredientNames" />
                                 <button type="submit" class="btn btn-primary" >Submit</button>
-                            </a>
+
                         </div>
+
 
 
                     </form>

@@ -34,6 +34,8 @@ public class RecipeController {
     @Autowired
     private IngredientRepository ingredientRepository;
 
+    private Recipe oldRecipe;
+
     private List<Recipe> localRecipeList;
 
     @PostConstruct
@@ -240,8 +242,12 @@ public class RecipeController {
 
         Optional<Recipe> recipe = recipeService.getRecipeById(recipe_id);
 
+
+
         if (recipe.isPresent()) {
             Recipe recipeEntity = recipe.get();
+
+            oldRecipe = recipeEntity;
             model.addAttribute("recipe", recipeEntity);
 
             List<String> ingredientNamesList = recipeEntity.getIngredientList();
@@ -250,17 +256,42 @@ public class RecipeController {
 
             System.out.println(ingredients.toString());
 
-            //for (Ingredient ingredient: ingredients) {
-                model.addAttribute("ingredients", ingredients);
-            //}
-
-
-            //List<Ingredient> ingredients = ingredientService.getAllIngredients();
-
+            model.addAttribute("ingredients", ingredients);
 
         }
 
         return "updateRecipe";
+    }
+
+    @PostMapping("/updateRecipe")
+    public String updateRecipe(@ModelAttribute("updatedRecipe") Recipe updatedRecipe) {
+
+        String category = updatedRecipe.getCategory();
+
+        System.out.println("Id: " + updatedRecipe.getRecipe_Id());
+        System.out.println("Name: " + updatedRecipe.getName());
+        System.out.println("Calories: " + updatedRecipe.getCalories());
+        System.out.println("Price: " + updatedRecipe.getPrice());
+        System.out.println("Ingredient List: " + updatedRecipe.getIngredientList().toString());
+        System.out.println("Category: " + updatedRecipe.getCategory());
+
+        oldRecipe.setName(updatedRecipe.getName());
+        oldRecipe.setCalories(updatedRecipe.getCalories());
+        oldRecipe.setPrice(updatedRecipe.getPrice());
+
+        oldRecipe.setCategory(updatedRecipe.getCategory());
+
+
+            recipeService.updateRecipe(oldRecipe);
+
+            category = updatedRecipe.getCategory().toLowerCase();
+
+        System.out.println("Category Lower Case: " + category);
+
+            return "redirect:/recipes/" + category;
+
+
+
     }
 
 

@@ -24,4 +24,6 @@ public interface RecipeService {
     void saveRecipes(List<Recipe> recipesToUpdate);
 
     Optional<Recipe> getRecipeById(Integer recipeId);
+
+    void updateRecipe(Recipe updatedRecipe);
 }
