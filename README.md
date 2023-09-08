@@ -19,14 +19,14 @@ _Pantry Wizard_ is a sophisticated culinary application that operates on the pri
 
 ### Model-View-Controller Architecture
 Spring MVC is a web application framework that follows the MVC architectural pattern. Pantry Wizard effectively implements this pattern:
-* **Model**: In Pantry Wizard, the model represents the data structure of the application's entities (User, Ingredient, and Recipe). The application relies on Hibernate and JPA for ORM (Object-Relational Mapping) to interact with the AWS hosted MySQL database. These technologies ensure that data is efficiently stored and retrieved.
-* **View**: The view layer is responsible for rendering the user interface. Pantry Wizard employs HTML, CSS, and Bootstrap to create a visually appealing and user-friendly interface. Users can seamlessly interact with their pantry ingredients and recipes.
-* **Controller**: Controllers act as intermediaries between the model and view. Pantry Wizard utilizes Spring Boot's controller classes to handle HTTP requests and direct them to the appropriate services. These controllers are responsible for CRUD operations, ensuring that users can create, read, update, and delete their pantry ingredients and recipes effortlessly.
+* **Model**: In _Pantry Wizard_, the model represents the data structure of the application's entities (User, Ingredient, and Recipe). The application relies on Hibernate and JPA for ORM (Object-Relational Mapping) to interact with the AWS hosted MySQL database. These technologies ensure that data is efficiently stored and retrieved.
+* **View**: The view layer is responsible for rendering the user interface. _Pantry Wizard_ employs HTML, CSS, and Bootstrap to create a visually appealing and user-friendly interface. Users can seamlessly interact with their pantry ingredients and recipes.
+* **Controller**: Controllers act as intermediaries between the model and view. _Pantry Wizard_ utilizes Spring Boot's controller classes to handle HTTP requests and direct them to the appropriate services. These controllers are responsible for CRUD operations, ensuring that users can create, read, update, and delete their pantry ingredients and recipes effortlessly.
 
 ### Ingredient-Recipe CRUD Operations
 * **Create**: Users can add new ingredients to their pantry and use these ingredients to create new recipes.
 * **Read**: Through the application's intuitive interface, users can view their pantry inventory, browse recipes, and access detailed information about each ingredient or recipe through clickable Bootstrap cards.
-* **Update**: When users need to modify an ingredient or recipe, Pantry Wizard allows them to make updates easily. The application ensures data consistency and accuracy by employing Spring MVC's mechanisms for form submissions and data validation.
+* **Update**: When users need to modify an ingredient or recipe, _Pantry Wizard_ allows them to make updates easily. The application ensures data consistency and accuracy by employing Spring MVC's mechanisms for form submissions and data validation.
 * **Delete**: Removing ingredients or recipes from the pantry is a straightforward process. Spring MVC handles the request to remove the selected items from the database, ensuring that data integrity is maintained.
 
 ## Getting Started
