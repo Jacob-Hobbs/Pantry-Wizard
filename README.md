@@ -5,7 +5,7 @@ Check out the magic live: [Pantry Wizard Login Portal](https://bit.ly/pantry-wiz
 
 **Password**: _password_
 
-_...or make your own!_
+_...or make your own credentials!_
 
 ## Description
 
