@@ -1,5 +1,11 @@
 # 🧙🏽 Pantry Wizard 🧙🏽
-Check it out live here: 
+Check it out **live** here: [Pantry Wizard Login Portal](https://bit.ly/pantry-wizard)
+
+Username: _admin_ 
+
+Password: _password_
+
+_...or make your own!_
 
 ## Description
 
