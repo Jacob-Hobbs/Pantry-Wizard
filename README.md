@@ -9,11 +9,11 @@ _...or make your own!_
 
 ## Description
 
+<img src="https://github.com/Jacob-Hobbs/Pantry-Wizard/blob/master/src/main/resources/static/overview.gif">
+
 _Pantry Wizard_ is a culinary companion like no other, revolutionizing the way chefs and home cooks approach meal planning. With its intuitive and user-friendly interface, users can effortlessly add locally sourced ingredients to their virtual pantry. This inventory becomes the cornerstone for crafting exquisite recipes that celebrate the richness of locally grown produce. The application offers a secure login interface with customizable credentials, ensuring that your culinary creations are for your eyes only. But _Pantry Wizard_ is not just about convenience; it's about precision. The platform meticulously tracks caloric and pricing information for both ingredients and recipes, empowering chefs to create menus that cater to dietary needs and budget constraints. 
 
 Behind the scenes, the application relies on a robust technology stack, including Java, Spring Boot, Hibernate, JPA, HTML, CSS, Maven, Bootstrap, and a hosted MySQL Database. _Pantry Wizard_ is hosted seamlessly on AWS Elastic Beanstalk, ensuring a harmonious and responsive experience for users as they embark on journey that involves unlocking the potential of local ingredients in the most innovative way possible.
-
-<img src="https://github.com/Jacob-Hobbs/Pantry-Wizard/blob/master/src/main/resources/static/overview.gif">
 
 ## Architecture
 
