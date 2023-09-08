@@ -13,6 +13,8 @@ _Pantry Wizard_ is a culinary companion like no other, revolutionizing the way c
 
 Behind the scenes, the application relies on a robust technology stack, including Java, Spring Boot, Hibernate, JPA, HTML, CSS, Maven, Bootstrap, and a hosted MySQL Database. _Pantry Wizard_ is hosted seamlessly on AWS Elastic Beanstalk, ensuring a harmonious and responsive experience for users as they embark on journey that involves unlocking the potential of local ingredients in the most innovative way possible.
 
+<img src="https://github.com/Jacob-Hobbs/Pantry-Wizard/blob/master/src/main/resources/static/overview.gif">
+
 ## Architecture
 
 _Pantry Wizard_ is a sophisticated culinary application that operates on the principles of Spring MVC (Model-View-Controller), making it a robust CRUD (Create, Read, Update, Delete) application. Let's delve into how _Pantry Wizard_ utilizes Spring MVC to provide a seamless user experience while managing essential operations:
@@ -25,6 +27,7 @@ Spring MVC is a web application framework that follows the MVC architectural pat
 
 ### Ingredient-Recipe CRUD Operations
 * **Create**: Users can add new ingredients to their pantry and use these ingredients to create new recipes.
+  <img src="https://github.com/Jacob-Hobbs/Pantry-Wizard/blob/master/src/main/resources/static/addIngredient.gif">
 * **Read**: Through the application's intuitive interface, users can view their pantry inventory, browse recipes, and access detailed information about each ingredient or recipe through clickable Bootstrap cards.
 * **Update**: When users need to modify an ingredient or recipe, _Pantry Wizard_ allows them to make updates easily. The application ensures data consistency and accuracy by employing Spring MVC's mechanisms for form submissions and data validation.
 * **Delete**: Removing ingredients or recipes from the pantry is a straightforward process. Spring MVC handles the request to remove the selected items from the database, ensuring that data integrity is maintained.
