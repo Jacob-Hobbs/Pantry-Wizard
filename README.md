@@ -33,8 +33,15 @@ Spring MVC is a web application framework that follows the MVC architectural pat
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Web Browser (works well in Google Chrome)
+* Java JDK 17.0.8 [(Download)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+* Spring Boot Starter Data JPA
+* Spring Boot Starter Thymeleaf
+* Spring Boot Starter Web
+* Spring Boot Devtools
+* MySQL Connector J
+* Spring Boot Starter Test
+* Spring Boot Maven Plugin
 
 ### Installing
 
@@ -51,17 +58,14 @@ code blocks for commands
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+Common Issues:
+* In this current release, when recipes are added or updated, the first form within the "Add Ingredient" selectors must have an ingredient category selection before the recipe submission will be approved. In future updates this will be changed. 
 
 ## Authors
 
-Contributors names and contact info
+Author can be contacted via the following link:
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+[Jacob Hobbs](https://www.linkedin.com/in/jacobrayhobbs/)
 
 ## Version History
 
@@ -71,14 +75,8 @@ ex. [@DomPizzie](https://twitter.com/dompizzie)
 * 0.1
     * Initial Release
 
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
+* [Bootstrap Docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+* [Spring Initializr](https://start.spring.io/)
+
