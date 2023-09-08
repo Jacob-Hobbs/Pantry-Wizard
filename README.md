@@ -1,4 +1,4 @@
-# 🧙🏽 Pantry Wizard 🧙🏽
+<img src="https://github.com/Jacob-Hobbs/Pantry-Wizard/blob/master/src/main/resources/static/pantrywizard%20banner.JPG" >
 Check it out **live** here: [Pantry Wizard Login Portal](https://bit.ly/pantry-wizard)
 
 Username: _admin_ 
