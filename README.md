@@ -1,4 +1,6 @@
 <img src="https://github.com/Jacob-Hobbs/Pantry-Wizard/blob/master/src/main/resources/static/pantrywizard%20banner.JPG" >
+
+# Pantry Wizard
 Check it out **live** here: [Pantry Wizard Login Portal](https://bit.ly/pantry-wizard)
 
 Username: _admin_ 
