@@ -6,13 +6,11 @@ import com.projects.pantrywizard.entity.Recipe;
 import com.projects.pantrywizard.service.IngredientService;
 import com.projects.pantrywizard.service.RecipeService;
 import jakarta.annotation.PostConstruct;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.*;
 
@@ -179,6 +177,7 @@ public class IngredientController {
         model.addAttribute("fruits", fruits);
         return "fruit";
     }
+
 
     @GetMapping("/ingredients/vegetable")
     public String getVegetableIngredients(Model model) {
