@@ -49,19 +49,6 @@ Spring MVC is a web application framework that follows the MVC architectural pat
 * Spring Boot Starter Test
 * Spring Boot Maven Plugin
 
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
 ## Help
 
 Common Issues:
@@ -72,14 +59,6 @@ Common Issues:
 Author can be contacted via the following link:
 
 [Jacob Hobbs](https://www.linkedin.com/in/jacobrayhobbs/)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
 
 ## Acknowledgments
 
