@@ -49,6 +49,10 @@ Spring MVC is a web application framework that follows the MVC architectural pat
 * Spring Boot Starter Test
 * Spring Boot Maven Plugin
 
+### Accessing the program
+
+Pantry Wizard is hosted via AWS Elastic Beanstalk and can be accessed using the following link: [Pantry Wizard Login Portal](https://bit.ly/pantry-wizard)
+
 ## Help
 
 Common Issues:
