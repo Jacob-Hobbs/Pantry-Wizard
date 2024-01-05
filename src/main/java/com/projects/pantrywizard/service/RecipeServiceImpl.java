@@ -1,3 +1,6 @@
+/**
+ * @author Jacob Hobbs
+ */
 package com.projects.pantrywizard.service;
 
 import com.projects.pantrywizard.dao.RecipeRepository;

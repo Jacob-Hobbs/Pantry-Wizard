@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+/**
+ * @author Jacob Hobbs
+ */
 public class Recipe {
 
     @Id

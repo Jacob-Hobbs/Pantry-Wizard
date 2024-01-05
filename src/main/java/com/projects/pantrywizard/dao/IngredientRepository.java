@@ -1,3 +1,6 @@
+/**
+ * @author Jacob Hobbs
+ */
 package com.projects.pantrywizard.dao;
 
 import com.projects.pantrywizard.entity.Ingredient;

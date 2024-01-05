@@ -1,3 +1,6 @@
+/**
+ * @author Jacob Hobbs
+ */
 package com.projects.pantrywizard.controller;
 
 import com.projects.pantrywizard.dao.IngredientRepository;
@@ -14,8 +17,11 @@ import org.springframework.web.bind.annotation.*;
 import java.nio.file.Paths;
 import java.util.*;
 
+/**
+ *
+ * */
 @Controller
-@RequestMapping("/")
+@RequestMapping
 public class IngredientController {
 
     @Autowired

@@ -1,3 +1,6 @@
+/**
+ * @author Jacob Hobbs
+ */
 package com.projects.pantrywizard.controller;
 
 import com.projects.pantrywizard.dao.IngredientRepository;

@@ -1,3 +1,6 @@
+/**
+ * @author Jacob Hobbs
+ */
 package com.projects.pantrywizard.entity;
 
 import jakarta.persistence.Column;
