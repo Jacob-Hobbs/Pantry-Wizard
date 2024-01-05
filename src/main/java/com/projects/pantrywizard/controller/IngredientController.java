@@ -19,7 +19,7 @@ import java.util.*;
 
 /**
  * The IngredientController class acts as the mediator between ingredient views and models,
- * facilitating the call of CRUD operations.
+ * facilitating the call of HTTP requests.
  * */
 @Controller
 @RequestMapping
