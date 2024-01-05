@@ -18,7 +18,8 @@ import java.nio.file.Paths;
 import java.util.*;
 
 /**
- *
+ * The IngredientController class acts as the mediator between ingredient views and models,
+ * facilitating the call of CRUD operations.
  * */
 @Controller
 @RequestMapping
@@ -35,7 +36,10 @@ public class IngredientController {
 
     private List<Ingredient> localIngredientList;
 
-    // define @PostConstruct to load the sample ingredient data at runtime
+    /**
+     * loadSampleData is a post construct method that feeds hard-coded sample data into the model
+     * at runtime.
+     * */
     @PostConstruct
     public void loadSampleData() {
 
@@ -68,9 +72,16 @@ public class IngredientController {
 
     }
 
+    /**
+     * addIngredient is a posting method that communicates to the model that a new
+     * ingredient entity must be created and saved in the database.
+     *
+     * New ingredient attributes are bound to the parameterized Ingredient object which are then
+     * saved as a new ingredient entry. The user is then redirected to the ingredient page
+     * matching the newly stored ingredient's category.
+     * */
     @PostMapping("/addIngredient")
     public String addIngredient(@ModelAttribute("ingredient") Ingredient ingredient) {
-
 
         ingredientService.saveIngredient(ingredient);
 
