@@ -94,14 +94,27 @@ public class IngredientController {
         return "redirect:/ingredients/" + category;
     }
 
+    /**
+     * getIngredients is a GetMapping method that communicates to the model that the index
+     * page must be retrieved for the user.
+     * */
     @GetMapping("/ingredients")
     public String getIngredients(Model model) {
 
-        model.addAttribute("something", null);
+        model.addAttribute("ingredient", null);
 
         return "index";
     }
 
+    /**
+     * getIngredientById is a GetMapping method that communicates to the model that a certain
+     * ingredient needs to be retrieved based on its assigned id.
+     *
+     * The parameterized int ingredientId is bound with the path variable found within the HTTP
+     * request URL submitted by the user.
+     * http://localhost:8080/pantrywizard/ingredients/3 corresponds to Grapes as this ingredient
+     * has an ingredient id of 3.
+     * */
     @GetMapping("/ingredients/{ingredientId}")
     public Ingredient getIngredientById(@PathVariable int ingredientId) {
 
